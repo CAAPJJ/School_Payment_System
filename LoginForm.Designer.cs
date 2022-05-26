@@ -35,8 +35,8 @@
             this.password = new System.Windows.Forms.TextBox();
             this.usrname = new System.Windows.Forms.Label();
             this.header = new System.Windows.Forms.Panel();
+            this.winclose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.headerlabel = new System.Windows.Forms.Label();
             this.fast = new System.Windows.Forms.Label();
             this.forgpass = new System.Windows.Forms.Button();
             this.dataSet11 = new Online_Payment.DataSet1();
@@ -46,13 +46,12 @@
             this.log = new System.Windows.Forms.Button();
             this.loginas = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.winclose = new System.Windows.Forms.PictureBox();
             this.header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.winclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winclose)).BeginInit();
             this.SuspendLayout();
             // 
             // reg
@@ -119,13 +118,25 @@
             this.header.BackColor = System.Drawing.Color.Red;
             this.header.Controls.Add(this.winclose);
             this.header.Controls.Add(this.pictureBox1);
-            this.header.Controls.Add(this.headerlabel);
             this.header.ForeColor = System.Drawing.Color.White;
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(709, 125);
             this.header.TabIndex = 6;
             this.header.Paint += new System.Windows.Forms.PaintEventHandler(this.Header_Paint);
+            // 
+            // winclose
+            // 
+            this.winclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.winclose.Image = ((System.Drawing.Image)(resources.GetObject("winclose.Image")));
+            this.winclose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.winclose.Location = new System.Drawing.Point(678, 0);
+            this.winclose.Name = "winclose";
+            this.winclose.Size = new System.Drawing.Size(31, 23);
+            this.winclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.winclose.TabIndex = 4;
+            this.winclose.TabStop = false;
+            this.winclose.Click += new System.EventHandler(this.Winclose_Click);
             // 
             // pictureBox1
             // 
@@ -136,16 +147,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(131, 119);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // headerlabel
-            // 
-            this.headerlabel.AutoSize = true;
-            this.headerlabel.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headerlabel.Location = new System.Drawing.Point(276, 36);
-            this.headerlabel.Name = "headerlabel";
-            this.headerlabel.Size = new System.Drawing.Size(244, 33);
-            this.headerlabel.TabIndex = 0;
-            this.headerlabel.Text = "Jase Online Paymet";
             // 
             // fast
             // 
@@ -241,19 +242,6 @@
             this.pictureBox3.TabIndex = 17;
             this.pictureBox3.TabStop = false;
             // 
-            // winclose
-            // 
-            this.winclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.winclose.Image = ((System.Drawing.Image)(resources.GetObject("winclose.Image")));
-            this.winclose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.winclose.Location = new System.Drawing.Point(678, 0);
-            this.winclose.Name = "winclose";
-            this.winclose.Size = new System.Drawing.Size(31, 23);
-            this.winclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.winclose.TabIndex = 4;
-            this.winclose.TabStop = false;
-            this.winclose.Click += new System.EventHandler(this.Winclose_Click);
-            // 
             // loginform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -280,12 +268,11 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Loginform_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.header.ResumeLayout(false);
-            this.header.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.winclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.winclose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +287,6 @@
         private System.Windows.Forms.TextBox usersname;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Panel header;
-        private System.Windows.Forms.Label headerlabel;
         private System.Windows.Forms.Label fast;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button forgpass;
