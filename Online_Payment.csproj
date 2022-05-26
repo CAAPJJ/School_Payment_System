@@ -173,11 +173,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="choosen_school.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="choosen_school.Designer.cs">
+      <DependentUpon>choosen_school.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DashBoardForm.Designer.cs">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -251,6 +260,9 @@
     <Compile Include="SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="choosen_school.resx">
+      <DependentUpon>choosen_school.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoardForm.resx">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </EmbeddedResource>

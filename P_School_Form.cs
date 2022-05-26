@@ -49,7 +49,7 @@ namespace Online_Payment
             stugrv.DataSource = dt;
         }
 
-       // public string scid;
+       public string scid;
         private void Stugrv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(stugrv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
@@ -59,7 +59,7 @@ namespace Online_Payment
                 address.Text = stugrv.Rows[e.RowIndex].Cells["Adress"].FormattedValue.ToString();
                 schemail.Text = stugrv.Rows[e.RowIndex].Cells["School_Email"].FormattedValue.ToString();
                 phonenum.Text = stugrv.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
-                //scid = stugrv.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+                scid = stugrv.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
             }
             sch_fee_info();
         }
@@ -80,16 +80,24 @@ namespace Online_Payment
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string addtocloud = "execute add_cloud  @pid,@sid";
+            string addtocloud = "execute add_cloud  @pid,@sid,@stuid";
             SqlConnection conn = new SqlConnection(Conn);
-            SqlCommand cmd = new SqlCommand(addtocloud, conn);
-            cmd.Parameters.AddWithValue("@pid", loginform.getpid());
-            cmd.Parameters.AddWithValue("@sid", loginform.getsid());
-            SqlDataAdapter adabter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adabter.Fill(table);
-            stugrv.DataSource = table;
-            MessageBox.Show("School Add Successfully");
+            conn.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(addtocloud, conn);
+                cmd.Parameters.AddWithValue("@pid", loginform.getpid());
+                cmd.Parameters.AddWithValue("@sid", scid);
+                cmd.Parameters.AddWithValue("@stuid", stuid.Text);
+                SqlDataAdapter adabter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adabter.Fill(table);
+                stugrv.DataSource = table;
+                MessageBox.Show("School Add Successfully");
+            }catch(Exception ex)
+            {
+
+            }
             conn.Close();
         }
 
