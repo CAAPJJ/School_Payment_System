@@ -57,10 +57,10 @@
             // 
             // reg
             // 
-            this.reg.Location = new System.Drawing.Point(283, 292);
+            this.reg.Location = new System.Drawing.Point(328, 305);
             this.reg.Margin = new System.Windows.Forms.Padding(2);
             this.reg.Name = "reg";
-            this.reg.Size = new System.Drawing.Size(89, 30);
+            this.reg.Size = new System.Drawing.Size(104, 31);
             this.reg.TabIndex = 1;
             this.reg.Text = "Register";
             this.reg.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             // 
             // log
             // 
-            this.log.Location = new System.Drawing.Point(158, 292);
+            this.log.Location = new System.Drawing.Point(161, 305);
             this.log.Margin = new System.Windows.Forms.Padding(2);
             this.log.Name = "log";
             this.log.Size = new System.Drawing.Size(64, 31);
