@@ -47,6 +47,8 @@
             this.log = new System.Windows.Forms.Button();
             this.loginas = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.winclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,10 +59,10 @@
             // 
             // reg
             // 
-            this.reg.Location = new System.Drawing.Point(328, 305);
-            this.reg.Margin = new System.Windows.Forms.Padding(2);
+            this.reg.Location = new System.Drawing.Point(377, 359);
+            this.reg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reg.Name = "reg";
-            this.reg.Size = new System.Drawing.Size(104, 31);
+            this.reg.Size = new System.Drawing.Size(119, 37);
             this.reg.TabIndex = 1;
             this.reg.Text = "Register";
             this.reg.UseVisualStyleBackColor = true;
@@ -71,10 +73,9 @@
             this.Pass.AutoSize = true;
             this.Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pass.ForeColor = System.Drawing.Color.Red;
-            this.Pass.Location = new System.Drawing.Point(133, 165);
-            this.Pass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Pass.Location = new System.Drawing.Point(177, 203);
             this.Pass.Name = "Pass";
-            this.Pass.Size = new System.Drawing.Size(92, 24);
+            this.Pass.Size = new System.Drawing.Size(120, 29);
             this.Pass.TabIndex = 3;
             this.Pass.Text = "Password";
             this.Pass.Click += new System.EventHandler(this.Label1_Click_1);
@@ -82,10 +83,10 @@
             // usersname
             // 
             this.usersname.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.usersname.Location = new System.Drawing.Point(261, 122);
-            this.usersname.Margin = new System.Windows.Forms.Padding(2);
+            this.usersname.Location = new System.Drawing.Point(348, 150);
+            this.usersname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usersname.Name = "usersname";
-            this.usersname.Size = new System.Drawing.Size(138, 20);
+            this.usersname.Size = new System.Drawing.Size(183, 22);
             this.usersname.TabIndex = 4;
             this.usersname.MouseClick += new System.Windows.Forms.MouseEventHandler(this.username);
             this.usersname.MouseLeave += new System.EventHandler(this.username);
@@ -93,10 +94,10 @@
             // password
             // 
             this.password.ForeColor = System.Drawing.Color.Black;
-            this.password.Location = new System.Drawing.Point(261, 171);
-            this.password.Margin = new System.Windows.Forms.Padding(2);
+            this.password.Location = new System.Drawing.Point(348, 210);
+            this.password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(138, 20);
+            this.password.Size = new System.Drawing.Size(183, 22);
             this.password.TabIndex = 5;
             this.password.UseSystemPasswordChar = true;
             this.password.MouseCaptureChanged += new System.EventHandler(this.username);
@@ -108,10 +109,9 @@
             this.usrname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrname.ForeColor = System.Drawing.Color.Red;
             this.usrname.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.usrname.Location = new System.Drawing.Point(133, 122);
-            this.usrname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.usrname.Location = new System.Drawing.Point(177, 150);
             this.usrname.Name = "usrname";
-            this.usrname.Size = new System.Drawing.Size(105, 24);
+            this.usrname.Size = new System.Drawing.Size(135, 29);
             this.usrname.TabIndex = 2;
             this.usrname.Text = "User Name";
             this.usrname.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -127,9 +127,9 @@
             this.header.Controls.Add(this.pictureBox1);
             this.header.ForeColor = System.Drawing.Color.White;
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(2);
+            this.header.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(532, 102);
+            this.header.Size = new System.Drawing.Size(708, 126);
             this.header.TabIndex = 6;
             this.header.Paint += new System.Windows.Forms.PaintEventHandler(this.Header_Paint);
             // 
@@ -137,9 +137,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(227, 19);
+            this.label2.Location = new System.Drawing.Point(303, 23);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(258, 42);
+            this.label2.Size = new System.Drawing.Size(324, 54);
             this.label2.TabIndex = 6;
             this.label2.Text = "Wise Payment";
             // 
@@ -148,10 +149,10 @@
             this.winclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.winclose.Image = ((System.Drawing.Image)(resources.GetObject("winclose.Image")));
             this.winclose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.winclose.Location = new System.Drawing.Point(508, 0);
-            this.winclose.Margin = new System.Windows.Forms.Padding(2);
+            this.winclose.Location = new System.Drawing.Point(676, 0);
+            this.winclose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.winclose.Name = "winclose";
-            this.winclose.Size = new System.Drawing.Size(23, 19);
+            this.winclose.Size = new System.Drawing.Size(31, 23);
             this.winclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.winclose.TabIndex = 4;
             this.winclose.TabStop = false;
@@ -161,10 +162,10 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(104, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(139, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(98, 97);
+            this.pictureBox1.Size = new System.Drawing.Size(130, 119);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -174,19 +175,18 @@
             this.fast.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.fast.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.fast.ForeColor = System.Drawing.Color.Red;
-            this.fast.Location = new System.Drawing.Point(0, 353);
-            this.fast.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fast.Location = new System.Drawing.Point(0, 456);
             this.fast.Name = "fast";
-            this.fast.Size = new System.Drawing.Size(85, 13);
+            this.fast.Size = new System.Drawing.Size(112, 17);
             this.fast.TabIndex = 7;
             this.fast.Text = "Fast and Secure";
             // 
             // forgpass
             // 
-            this.forgpass.Location = new System.Drawing.Point(136, 246);
-            this.forgpass.Margin = new System.Windows.Forms.Padding(2);
+            this.forgpass.Location = new System.Drawing.Point(181, 303);
+            this.forgpass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.forgpass.Name = "forgpass";
-            this.forgpass.Size = new System.Drawing.Size(116, 22);
+            this.forgpass.Size = new System.Drawing.Size(155, 27);
             this.forgpass.TabIndex = 11;
             this.forgpass.Text = "Forget Passowrd?";
             this.forgpass.UseVisualStyleBackColor = true;
@@ -206,20 +206,20 @@
             "School Adminstrator",
             "Student",
             "Parent"});
-            this.logas.Location = new System.Drawing.Point(261, 213);
-            this.logas.Margin = new System.Windows.Forms.Padding(2);
+            this.logas.Location = new System.Drawing.Point(348, 262);
+            this.logas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logas.Name = "logas";
-            this.logas.Size = new System.Drawing.Size(138, 21);
+            this.logas.Size = new System.Drawing.Size(183, 24);
             this.logas.TabIndex = 13;
             this.logas.Text = "Student";
             // 
             // showpassword
             // 
             this.showpassword.AutoSize = true;
-            this.showpassword.Location = new System.Drawing.Point(424, 172);
-            this.showpassword.Margin = new System.Windows.Forms.Padding(2);
+            this.showpassword.Location = new System.Drawing.Point(565, 212);
+            this.showpassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.showpassword.Name = "showpassword";
-            this.showpassword.Size = new System.Drawing.Size(102, 17);
+            this.showpassword.Size = new System.Drawing.Size(129, 21);
             this.showpassword.TabIndex = 15;
             this.showpassword.Text = "Show Password";
             this.showpassword.UseVisualStyleBackColor = true;
@@ -228,20 +228,20 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(397, 171);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(529, 210);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 18);
+            this.pictureBox2.Size = new System.Drawing.Size(31, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
             // 
             // log
             // 
-            this.log.Location = new System.Drawing.Point(161, 305);
-            this.log.Margin = new System.Windows.Forms.Padding(2);
+            this.log.Location = new System.Drawing.Point(211, 359);
+            this.log.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.log.Name = "log";
-            this.log.Size = new System.Drawing.Size(64, 31);
+            this.log.Size = new System.Drawing.Size(85, 38);
             this.log.TabIndex = 0;
             this.log.Text = "Log In";
             this.log.UseVisualStyleBackColor = true;
@@ -252,29 +252,48 @@
             this.loginas.AutoSize = true;
             this.loginas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginas.ForeColor = System.Drawing.Color.Red;
-            this.loginas.Location = new System.Drawing.Point(133, 213);
-            this.loginas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.loginas.Location = new System.Drawing.Point(177, 262);
             this.loginas.Name = "loginas";
-            this.loginas.Size = new System.Drawing.Size(104, 24);
+            this.loginas.Size = new System.Drawing.Size(131, 29);
             this.loginas.TabIndex = 18;
             this.loginas.Text = "Login In As";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(397, 122);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(529, 150);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(23, 18);
+            this.pictureBox3.Size = new System.Drawing.Size(31, 22);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 17;
             this.pictureBox3.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(510, 291);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(510, 339);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(136, 57);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // loginform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 366);
+            this.ClientSize = new System.Drawing.Size(708, 473);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.loginas);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -290,7 +309,7 @@
             this.Controls.Add(this.reg);
             this.Controls.Add(this.log);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "loginform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -328,6 +347,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox winclose;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
