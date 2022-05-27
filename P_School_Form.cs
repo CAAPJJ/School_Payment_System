@@ -16,10 +16,11 @@ namespace Online_Payment
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
         loginform loginform = new loginform();
         
-        public P_School_Form(loginform logfor,Parent_Form pform)
+        public P_School_Form(loginform logfor)
         {
             InitializeComponent();
             this.loginform = logfor;
+           
         }
 
         private void Search_Click(object sender, EventArgs e)
@@ -66,21 +67,7 @@ namespace Online_Payment
                 phonenum.Text = stugrv.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
                 scid = stugrv.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
             }
-            sch_fee_info();
-        }
-
-        public void sch_fee_info()
-        {
-            string query = "execute Fee_Information @id";
-            SqlConnection conn = new SqlConnection(Conn);
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@id", loginform.getsid());
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            schoolclassfee.DataSource = dt;
-            conn.Close();
+           // sch_fee_info();
         }
 
         public void school_add()
@@ -162,8 +149,9 @@ namespace Online_Payment
 
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Parent_Form pform = new Parent_Form(loginform);
-            pform.ShowThisForm(new choosen_school());
+            Parent_Form parent_form = new Parent_Form(loginform);
+            choosen_school choosen = new choosen_school();
+            choosen.Show();
         }
 
         private void Schlistgrview_CellClick(object sender, DataGridViewCellEventArgs e)

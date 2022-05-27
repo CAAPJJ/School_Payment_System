@@ -52,12 +52,11 @@ namespace Online_Payment
 
         private void Dashboard_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(loginform.getpid().ToString());
+           // MessageBox.Show(loginform.getpid().ToString());
             Activate_Button(sender);
             labels();
             lbltop.Text = "Dash Board";
             ShowThisForm(new DashBoardForm(loginform));
-            
         }
 
         private void Profile_Click(object sender, EventArgs e)
@@ -73,7 +72,7 @@ namespace Online_Payment
         {
             Parent_Form pform = new Parent_Form(loginform);
             Activate_Button(sender);
-            ShowThisForm(new P_School_Form(loginform,pform));
+            ShowThisForm(new P_School_Form(loginform));
             labels();
             lbltop.Text = "School";
         }
