@@ -161,7 +161,7 @@ namespace Online_Payment
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             choosen_school chsh = new choosen_school();
-
+            chsh.Show();
         }
     }
 }
