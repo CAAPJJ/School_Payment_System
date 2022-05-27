@@ -27,8 +27,8 @@ namespace Online_Payment
             search.Text = "";
             search.ForeColor = Color.Black;
         }
-
-        private void Serch_Click(object sender, EventArgs e)
+        
+        public void search_school()
         {
             string searches = "execute Search_School @Schname";
             SqlConnection conn = new SqlConnection(Conn);
@@ -39,6 +39,10 @@ namespace Online_Payment
             adabter.Fill(table);
             stugrv.DataSource = table;
             conn.Close();
+        }
+        private void Serch_Click(object sender, EventArgs e)
+        {
+            search_school();
         }
         public void RefreshData()
         {
@@ -79,7 +83,7 @@ namespace Online_Payment
             conn.Close();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        public void school_add()
         {
             string addtocloud = "execute add_cloud  @pid,@sid,@stuid";
             SqlConnection conn = new SqlConnection(Conn);
@@ -102,6 +106,10 @@ namespace Online_Payment
             }
             conn.Close();
             School_List();
+        }
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            school_add();
         }
 
         public void School_List()
@@ -128,10 +136,6 @@ namespace Online_Payment
             {
                 MessageBox.Show(ex.Message);
             }
-          
-         
-
-
         }
         private void Label3_Click(object sender, EventArgs e)
         {
@@ -158,13 +162,31 @@ namespace Online_Payment
 
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-       
-            //pform.ShowThisForm(new choosen_school());
+            Parent_Form pform = new Parent_Form(loginform);
+            pform.ShowThisForm(new choosen_school());
         }
 
         private void Schlistgrview_CellClick(object sender, DataGridViewCellEventArgs e)
         {
            // pform.ShowThisForm(new choosen_school());
+           
+        }
+
+        private void Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                search_school();
+
+            }
+        }
+
+        private void Stuid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                school_add();
+            }
         }
     }
 }
