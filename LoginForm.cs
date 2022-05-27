@@ -29,7 +29,7 @@ namespace Online_Payment
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@username", Get_User_Name);
-            cmd.Parameters.AddWithValue("@userpassword",User_Password);
+            cmd.Parameters.AddWithValue("@userpassword", User_Password);
             id = Convert.ToInt32(cmd.ExecuteScalar());
             conn.Close();
             return id;
@@ -38,7 +38,7 @@ namespace Online_Payment
         public int getsid()
         {
             int id;
-           string query = "execute Get_School_Id @username,@userpassword";
+            string query = "execute Get_School_Id @username,@userpassword";
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -51,7 +51,7 @@ namespace Online_Payment
 
         public int getPacc()
         {
-            int id = getpid(),account;
+            int id = getpid(), account;
             string query = "select Account_num from Parent_Account where Parent_Id = " + id;
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
@@ -61,7 +61,7 @@ namespace Online_Payment
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            usersname.Focus();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace Online_Payment
         public String Get_User_Name
         {
             get { return usersname.Text.ToString(); }
-            
+
         }
         public String User_Password
         {
@@ -111,21 +111,22 @@ namespace Online_Payment
             //logus.SelectedItem = "Student";
             //choose =logas.Text.ToString();
             //choose = "Student";
-            
+
         }
-        private void log_Click(object sender, EventArgs e)
+
+        public void login()
         {
             try
             {
-                if(usersname.Text == "" && password.Text =="")
+                if (usersname.Text == "" && password.Text == "")
                 {
                     MessageBox.Show("Enter User Name and Password");
                 }
                 else
                 {
                     choose = choice();
-                    string query = "select *from "+choose+ " where User_Name=@usrname and password=@pass";
-                    
+                    string query = "select *from " + choose + " where User_Name=@usrname and password=@pass";
+
                     SqlConnection conn = new SqlConnection(Conn);
                     SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -137,15 +138,15 @@ namespace Online_Payment
                     adpt.Fill(ds);
                     conn.Close();
                     int count = ds.Tables[0].Rows.Count;
-                    
-                    if (count==1)
+
+                    if (count == 1)
                     {
                         switch (choose)
                         {
                             case "School":
-                                 School_Adminstration schooladmin = new School_Adminstration(this);
-                                 schooladmin.Show();
-                                 this.Hide();
+                                School_Adminstration schooladmin = new School_Adminstration(this);
+                                schooladmin.Show();
+                                this.Hide();
                                 break;
                             case "Parent":
                                 Parent_Form PF = new Parent_Form(this);
@@ -159,8 +160,8 @@ namespace Online_Payment
                     }
                     else
                     {
-                        MessageBox.Show("Invalid User Name or password",choose);
-                            i++;
+                        MessageBox.Show("Invalid User Name or password", choose);
+                        i++;
                         if (i >= 3)
                         {
                             forgpass.Visible = true;
@@ -174,6 +175,10 @@ namespace Online_Payment
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void log_Click(object sender, EventArgs e)
+        {
+            login();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -229,7 +234,7 @@ namespace Online_Payment
             {
                 usersname.Text = "";
                 usersname.ForeColor = Color.Black;
-                
+
             }
         }
 
@@ -245,7 +250,7 @@ namespace Online_Payment
 
         private void logus(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Winclose_Click(object sender, EventArgs e)
@@ -253,6 +258,63 @@ namespace Online_Payment
             this.Close();
         }
 
-        
+        private void Loginform_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+
+            }
+        }
+
+        private void Usersname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                password.Focus();
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                logas.Focus();
+            }
+        }
+
+        private void Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                logas.Focus();
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                usersname.Focus();
+            }
+        }
+
+        private void Logas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+
+            }else if(e.KeyCode == Keys.Down)
+            {
+                usersname.Focus();
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                password.Focus();
+            }
+        }
     }
 }

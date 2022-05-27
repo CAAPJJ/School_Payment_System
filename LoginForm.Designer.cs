@@ -87,6 +87,7 @@
             this.usersname.Size = new System.Drawing.Size(183, 22);
             this.usersname.TabIndex = 4;
             this.usersname.MouseClick += new System.Windows.Forms.MouseEventHandler(this.username);
+            this.usersname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Usersname_KeyDown);
             this.usersname.MouseLeave += new System.EventHandler(this.username);
             // 
             // password
@@ -98,6 +99,7 @@
             this.password.Size = new System.Drawing.Size(183, 22);
             this.password.TabIndex = 5;
             this.password.UseSystemPasswordChar = true;
+            this.password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Password_KeyDown);
             this.password.MouseCaptureChanged += new System.EventHandler(this.username);
             // 
             // usrname
@@ -210,6 +212,7 @@
             this.logas.Size = new System.Drawing.Size(183, 24);
             this.logas.TabIndex = 13;
             this.logas.Text = "Student";
+            this.logas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Logas_KeyDown);
             // 
             // showpassword
             // 
@@ -293,6 +296,7 @@
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Loginform_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Loginform_KeyDown);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.winclose)).EndInit();

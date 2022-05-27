@@ -15,7 +15,8 @@ namespace Online_Payment
     {
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
         loginform loginform = new loginform();
-        public P_School_Form(loginform logfor)
+        
+        public P_School_Form(loginform logfor,Parent_Form pform)
         {
             InitializeComponent();
             this.loginform = logfor;
@@ -105,10 +106,10 @@ namespace Online_Payment
 
         public void School_List()
         {
-            string schname = null;
+            //string schname = null;
             int pid = loginform.getpid();
-            string count = null;
-            string query = "select School_Name from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id = 1)";
+            //string count = null;
+            string query = "select School_Name from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id ="+pid+")";
             string query1 = "select count(School_Id) as Number from Parent_cloud where Parent_Id = "+pid;
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
@@ -128,9 +129,7 @@ namespace Online_Payment
                 MessageBox.Show(ex.Message);
             }
           
-            //ListViewItem Item= new ListViewItem(schname);
-            //Item.SubItems.Add(count);
-            //schoollist.Items.Add(Item);\
+         
 
 
         }
@@ -146,22 +145,26 @@ namespace Online_Payment
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            school_name.Text = "";
-            address.Text = "";
-            schemail.Text = "";
-            phonenum.Text = "";
+            school_name.Clear();
+            address.Clear();
+            schemail.Clear();
+            phonenum.Clear();
         }
 
         private void P_School_Form_Load(object sender, EventArgs e)
         {
             School_List();
-           
         }
 
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            choosen_school chsh = new choosen_school();
-            chsh.Show();
+       
+            //pform.ShowThisForm(new choosen_school());
+        }
+
+        private void Schlistgrview_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           // pform.ShowThisForm(new choosen_school());
         }
     }
 }

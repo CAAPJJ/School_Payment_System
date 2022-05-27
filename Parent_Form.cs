@@ -50,13 +50,6 @@ namespace Online_Payment
             lbltop.Text = "Dash Board";
         }
 
-       //public string username()
-       // {
-       //     //string query = "Select User_"
-       //     //return urname.;
-                 
-       // }
-
         private void Dashboard_Click(object sender, EventArgs e)
         {
             MessageBox.Show(loginform.getpid().ToString());
@@ -64,6 +57,7 @@ namespace Online_Payment
             labels();
             lbltop.Text = "Dash Board";
             ShowThisForm(new DashBoardForm(loginform));
+            
         }
 
         private void Profile_Click(object sender, EventArgs e)
@@ -77,9 +71,9 @@ namespace Online_Payment
         }
         private void School_Click(object sender, EventArgs e)
         {
-            
+            Parent_Form pform = new Parent_Form(loginform);
             Activate_Button(sender);
-            ShowThisForm(new P_School_Form(loginform));
+            ShowThisForm(new P_School_Form(loginform,pform));
             labels();
             lbltop.Text = "School";
         }

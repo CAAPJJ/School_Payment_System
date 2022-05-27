@@ -69,7 +69,7 @@
             this.label4.Location = new System.Drawing.Point(298, 50);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(273, 40);
+            this.label4.Size = new System.Drawing.Size(269, 38);
             this.label4.TabIndex = 74;
             this.label4.Text = "Choosen Schools";
             // 
@@ -135,6 +135,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbSchoolName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(209, 0);
             this.Name = "choosen_school";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "choosen_school";
