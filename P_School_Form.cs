@@ -94,13 +94,46 @@ namespace Online_Payment
                 adabter.Fill(table);
                 stugrv.DataSource = table;
                 MessageBox.Show("School Add Successfully");
-            }catch(Exception ex)
+            }
+            catch (SqlException ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             conn.Close();
+            School_List();
         }
 
+        public void School_List()
+        {
+            string schname = null;
+            int pid = loginform.getpid();
+            string count = null;
+            string query = "select School_Name from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id = 1)";
+            string query1 = "select count(School_Id) as Number from Parent_cloud where Parent_Id = "+pid;
+            SqlConnection conn = new SqlConnection(Conn);
+            conn.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd1 = new SqlCommand(query1, conn);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                schlistgrview.DataSource = dt;
+                //count = cmd1.ExecuteScalar().ToString();
+                //schname = cmd.ExecuteScalar().ToString();
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
+            //ListViewItem Item= new ListViewItem(schname);
+            //Item.SubItems.Add(count);
+            //schoollist.Items.Add(Item);\
+
+
+        }
         private void Label3_Click(object sender, EventArgs e)
         {
 
@@ -121,8 +154,14 @@ namespace Online_Payment
 
         private void P_School_Form_Load(object sender, EventArgs e)
         {
-            
+            School_List();
            
+        }
+
+        private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            choosen_school chsh = new choosen_school();
+
         }
     }
 }

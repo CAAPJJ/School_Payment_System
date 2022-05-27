@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_School_Form));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_School_Form));
             this.search = new System.Windows.Forms.TextBox();
-            this.serch = new System.Windows.Forms.PictureBox();
             this.stugrv = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.school_name = new System.Windows.Forms.TextBox();
@@ -46,21 +45,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.schoolclassfee = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lbSchoolName = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.stuid = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.serch)).BeginInit();
+            this.serch = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.schlistgrview = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.stugrv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolclassfee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serch)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.schlistgrview)).BeginInit();
             this.SuspendLayout();
             // 
             // search
@@ -76,19 +70,6 @@
             this.search.Text = "Search Something";
             this.search.Click += new System.EventHandler(this.Search_Click);
             // 
-            // serch
-            // 
-            this.serch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.serch.Image = ((System.Drawing.Image)(resources.GetObject("serch.Image")));
-            this.serch.Location = new System.Drawing.Point(850, 90);
-            this.serch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.serch.Name = "serch";
-            this.serch.Size = new System.Drawing.Size(35, 28);
-            this.serch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.serch.TabIndex = 4;
-            this.serch.TabStop = false;
-            this.serch.Click += new System.EventHandler(this.Serch_Click);
-            // 
             // stugrv
             // 
             this.stugrv.AllowUserToAddRows = false;
@@ -96,7 +77,7 @@
             this.stugrv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(210)))), ((int)(((byte)(245)))));
             this.stugrv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stugrv.Location = new System.Drawing.Point(498, 125);
-            this.stugrv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stugrv.Margin = new System.Windows.Forms.Padding(4);
             this.stugrv.Name = "stugrv";
             this.stugrv.ReadOnly = true;
             this.stugrv.RowHeadersVisible = false;
@@ -259,54 +240,6 @@
             this.label4.TabIndex = 58;
             this.label4.Text = "Your current school lsit";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(14, 18);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(252, 91);
-            this.button3.TabIndex = 59;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // lbSchoolName
-            // 
-            this.lbSchoolName.AutoSize = true;
-            this.lbSchoolName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSchoolName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbSchoolName.Location = new System.Drawing.Point(21, 56);
-            this.lbSchoolName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbSchoolName.Name = "lbSchoolName";
-            this.lbSchoolName.Size = new System.Drawing.Size(195, 29);
-            this.lbSchoolName.TabIndex = 60;
-            this.lbSchoolName.Text = "st mary university";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(263, 56);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(224, 29);
-            this.label6.TabIndex = 61;
-            this.label6.Text = "number of student 3";
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Location = new System.Drawing.Point(12, 148);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(475, 540);
-            this.panel1.TabIndex = 62;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -325,55 +258,36 @@
             this.stuid.Size = new System.Drawing.Size(209, 22);
             this.stuid.TabIndex = 63;
             // 
-            // button4
+            // serch
             // 
-            this.button4.Location = new System.Drawing.Point(14, 315);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(252, 91);
-            this.button4.TabIndex = 60;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.serch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.serch.Image = ((System.Drawing.Image)(resources.GetObject("serch.Image")));
+            this.serch.Location = new System.Drawing.Point(850, 90);
+            this.serch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.serch.Name = "serch";
+            this.serch.Size = new System.Drawing.Size(35, 28);
+            this.serch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.serch.TabIndex = 4;
+            this.serch.TabStop = false;
+            this.serch.Click += new System.EventHandler(this.Serch_Click);
             // 
-            // button5
+            // panel1
             // 
-            this.button5.Location = new System.Drawing.Point(14, 216);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(252, 91);
-            this.button5.TabIndex = 61;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.schlistgrview);
+            this.panel1.Location = new System.Drawing.Point(23, 167);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(467, 508);
+            this.panel1.TabIndex = 66;
             // 
-            // button6
+            // schlistgrview
             // 
-            this.button6.Location = new System.Drawing.Point(14, 117);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(252, 91);
-            this.button6.TabIndex = 62;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(14, 414);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(252, 91);
-            this.button8.TabIndex = 65;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(14, 514);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(252, 91);
-            this.button7.TabIndex = 66;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.schlistgrview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.schlistgrview.Location = new System.Drawing.Point(3, 3);
+            this.schlistgrview.Name = "schlistgrview";
+            this.schlistgrview.RowTemplate.Height = 24;
+            this.schlistgrview.Size = new System.Drawing.Size(461, 403);
+            this.schlistgrview.TabIndex = 0;
+            this.schlistgrview.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Schlistgrview_CellDoubleClick);
             // 
             // P_School_Form
             // 
@@ -381,11 +295,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(888, 700);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.stuid);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.lbSchoolName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.schoolclassfee);
             this.Controls.Add(this.button2);
@@ -406,10 +318,11 @@
             this.Name = "P_School_Form";
             this.Text = "P_School_Form";
             this.Load += new System.EventHandler(this.P_School_Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.serch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stugrv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolclassfee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serch)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.schlistgrview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,16 +345,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView schoolclassfee;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label lbSchoolName;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox stuid;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView schlistgrview;
     }
 }
