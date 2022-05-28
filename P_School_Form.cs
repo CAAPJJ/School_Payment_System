@@ -176,7 +176,7 @@ namespace Online_Payment
 
         public void changepanle()
         {
-            MessageBox.Show(scname);
+            MessageBox.Show(getSchoolName());
             P_School_Form pform = new P_School_Form(loginform);
             pnlP_School.Controls.Clear();
             choosen_school choosen = new choosen_school(loginform, pform);

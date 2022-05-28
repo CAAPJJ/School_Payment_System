@@ -60,7 +60,6 @@
             this.amounts.Name = "amounts";
             this.amounts.Size = new System.Drawing.Size(164, 22);
             this.amounts.TabIndex = 2;
-            //this.amounts.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // sacc
             // 
@@ -198,7 +197,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(347, 365);
+            this.label13.Location = new System.Drawing.Point(347, 356);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 29);

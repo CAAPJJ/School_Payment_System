@@ -13,7 +13,8 @@ namespace Online_Payment
     public partial class choosen_school : Form
     {
         private static loginform loginform = new loginform();
-       private static  P_School_Form pforms = new P_School_Form(loginform);
+
+        P_School_Form pforms = new P_School_Form(loginform);
         public choosen_school(loginform logfor,P_School_Form pform)
         {
             InitializeComponent();
@@ -25,11 +26,30 @@ namespace Online_Payment
         {
             MessageBox.Show(pforms.getSchoolName());
             MessageBox.Show(pforms.getschoolId(),"School ID");
+            changepanle();
         }
-
         private void Choosen_school_Load(object sender, EventArgs e)
         {
             lbChoosenSchool.Text = pforms.getSchoolName();
+        }
+
+        private void Stulistgrview_DoubleClick(object sender, EventArgs e)
+        {
+            changepanle();
+        }
+        public void changepanle()
+        {
+            pnlliststudent.Controls.Clear();
+            Payment choosen = new Payment(loginform);
+            choosen.TopLevel = false;
+            pnlliststudent.Controls.Clear();
+            pnlliststudent.Controls.Add(choosen);
+            choosen.Show();
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
