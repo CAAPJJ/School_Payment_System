@@ -58,7 +58,7 @@ namespace Online_Payment
        public string scid;
         private void Stugrv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(stugrv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            if (stugrv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 stugrv.CurrentRow.Selected = true;
                 school_name.Text = stugrv.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
@@ -67,9 +67,18 @@ namespace Online_Payment
                 phonenum.Text = stugrv.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
                 scid = stugrv.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
             }
-          
+        }
+        public int schid()
+        {
+            int sid = Convert.ToInt32(scid);
+            return sid;
         }
 
+        public int paid()
+        {
+            int j = loginform.getpid();
+            return j;
+        }
         public void school_add()
         {
             string addtocloud = "execute add_cloud  @pid,@sid,@stuid";
@@ -104,7 +113,7 @@ namespace Online_Payment
             //string schname = null;
             int pid = loginform.getpid();
             //string count = null;
-            string query = "select School_Name from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id ="+pid+")";
+            string query = "select School_Name,School_Id from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id ="+pid+")";
             string query1 = "select count(School_Id) as Number from Parent_cloud where Parent_Id = "+pid;
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
@@ -116,8 +125,6 @@ namespace Online_Payment
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 schlistgrview.DataSource = dt;
-                //count = cmd1.ExecuteScalar().ToString();
-                //schname = cmd.ExecuteScalar().ToString();
             }
             catch(SqlException ex)
             {
@@ -146,17 +153,33 @@ namespace Online_Payment
         {
             School_List();
         }
-
+        string scname,sclid;
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (schlistgrview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                schlistgrview.CurrentRow.Selected = true;
+                scname = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
+                sclid = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+            }
             changepanle();
+        }
+
+        public string getSchoolName()
+        {
+            return scname;
+        }
+        public string getschoolId()
+        {
+            return sclid;
         }
 
         public void changepanle()
         {
+            MessageBox.Show(scname);
+            P_School_Form pform = new P_School_Form(loginform);
             pnlP_School.Controls.Clear();
-            choosen_school choosen = new choosen_school();
+            choosen_school choosen = new choosen_school(loginform, pform);
             choosen.TopLevel = false;
             pnlP_School.Controls.Clear();
             pnlP_School.Controls.Add(choosen);
