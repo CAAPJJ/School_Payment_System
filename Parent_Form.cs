@@ -75,6 +75,7 @@ namespace Online_Payment
             ShowThisForm(new P_School_Form(loginform));
             labels();
             lbltop.Text = "School";
+
         }
         private void Pay_Click(object sender, EventArgs e)
         {

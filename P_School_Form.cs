@@ -67,7 +67,7 @@ namespace Online_Payment
                 phonenum.Text = stugrv.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
                 scid = stugrv.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
             }
-           // sch_fee_info();
+          
         }
 
         public void school_add()
@@ -149,8 +149,17 @@ namespace Online_Payment
 
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Parent_Form parent_form = new Parent_Form(loginform);
+
+            changepanle();
+        }
+
+        public void changepanle()
+        {
+            pnlP_School.Controls.Clear();
             choosen_school choosen = new choosen_school();
+            choosen.TopLevel = false;
+            pnlP_School.Controls.Clear();
+            pnlP_School.Controls.Add(choosen);
             choosen.Show();
         }
 
@@ -175,6 +184,11 @@ namespace Online_Payment
             {
                 school_add();
             }
+        }
+
+        private void PnlP_School_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

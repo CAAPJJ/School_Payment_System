@@ -60,7 +60,7 @@
             this.amounts.Name = "amounts";
             this.amounts.Size = new System.Drawing.Size(164, 22);
             this.amounts.TabIndex = 2;
-            this.amounts.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            //this.amounts.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // sacc
             // 

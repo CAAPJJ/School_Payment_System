@@ -126,7 +126,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(870, 653);
+            this.ClientSize = new System.Drawing.Size(888, 700);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -135,7 +135,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbSchoolName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(209, 0);
             this.Name = "choosen_school";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "choosen_school";
