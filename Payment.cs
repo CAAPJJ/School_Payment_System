@@ -17,11 +17,11 @@ namespace Online_Payment
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
         loginform loginform = new loginform();
         Global global = new Global();
-        public Payment(loginform logfor,Global glob)
+        public Payment(loginform logfor)
         {
             InitializeComponent();
             this.loginform = logfor;
-            this.global = glob;
+            //this.global = glob;
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace Online_Payment
         
         public void changepanle()
         {
-            Payment pform = new Payment(loginform,global);
+            Payment pform = new Payment(loginform);
             pnlPaymnet.Controls.Clear();
             choosen_school choosen = new choosen_school(loginform);
             choosen.TopLevel = false;
@@ -81,6 +81,12 @@ namespace Online_Payment
         }
       
         public string scid, scname;
+
+        private void PnlPaymnet_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Global global = new Global();

@@ -85,7 +85,7 @@ namespace Online_Payment
             //ShowThisForm(new Payment());
             labels();
             lbltop.Text = "Payment";
-            Payment payment = new Payment(loginform,global);
+            Payment payment = new Payment(loginform);
             payment.TopLevel = false;
             mainpanel.Controls.Clear();
             mainpanel.Controls.Add(payment);

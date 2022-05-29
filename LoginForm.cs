@@ -17,6 +17,7 @@ namespace Online_Payment
         public static int i = 0;
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
         string choose = "Student";
+        Global global = new Global();
         public loginform()
         {
             InitializeComponent();
@@ -59,6 +60,7 @@ namespace Online_Payment
             account = Convert.ToInt32(cmd.ExecuteScalar());
             return account;
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             usersname.Focus();
@@ -78,7 +80,6 @@ namespace Online_Payment
         {
 
         }
-
         public String Get_User_Name
         {
             get { return usersname.Text.ToString(); }
