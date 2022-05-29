@@ -123,6 +123,26 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="status.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
+        iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAABGdBTUEAALGPC/xhBQAAAqBJREFUWEft
+        V7tuE0EUXRqghhaFSAQSZO/atEiIhyIaanoqRAghMxtRgISUCvgLxKNCES0lXUTiWVLRJJ+AFBuIA0Ky
+        k3s2V9bseGzPzq5DgY90ZHv2Ps7O614HE0ygYfrz6unaRnypvvX4Ir7z8L9DfUtM11T8PlJyn3jA3A8b
+        8t2Vryvn2ex4ESXiVqjkD01QhnhGom+y+fhQTcTlMBGLNSVfRYl8RsmbphgLm7BNfZR8iBgcrjjmNhbP
+        0tt/pMBdLaEvuyR0rbIuz3B4P0AUve2OJUFRbhcSxzNlC1ycNHOcJh+wHyhAGcs3iN1QrcxxOnfQkX9k
+        CVYy4wVO5w4+SZZgXvwbNeQn+jROsnjB6dzBV4IWxJu/6SVvIyatwnz2Wfw0TeYKXJ7k6HJPjWJPFBCq
+        +K7xvOl8CaPMDLvRc/BPXYk7HDaobsZXbXEx5lS+uPZlnD2YmSmIorGfhk2PqK1sagc6AzLUC7KN34kd
+        Y0xnLlHMduXb6kl26QfaFotTjzUlXgcHwQnsC/r9y3xO9BGVspLIGXbrh4Ow52yKU3uNxnRx3qLAqnpy
+        gV37wUvZNp00tnFi2VwXV0gUcW/oUgLYiBZHnX3iCooiijfsPhjRl6VzZDzqDkOXOs8uPUCUx1XTqqjl
+        KQ4xHLy5R4nLzJzfTMndcFNe5xBucCxJ7TCR98Mkvkff84oi5ixJAO2bMov4AHoUcfT39mDlkV7+Aadz
+        B5o4ch5no9iJGsuznC4faJ+tWQKWQpqtD5wmP/CHgYJsm0FLYLE/I0Aq7mjmyljWDmaqsCgd2A/o0ekC
+        fYljTklcGsld2OKEY6N776k84Eu4ZQjR2ao3xA02P16g86Rlfksi9MK/hzHnMjNOzOwsnUI/lXJUlzDB
+        /4UgOARIWEnAQ7MV+AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="stat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dataGridViewImageColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAKgSURBVFhH7Ve7bhNBFF0aoIYWhUgEEmTv2rRIiIciGmp6KkQIITMbUYCElAr4C8SjQhEtJV1E
         4llS0SSfgBQbiANCspN7NlfW7Hhsz86uQ4GPdGR79j7OzuteBxNMoGH68+rp2kZ8qb71+CK+8/C/Q31L
@@ -138,7 +158,4 @@
         TszsLJ1CP5VyVJcwwf+FIDgESFhJwEOzFfgAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="stat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

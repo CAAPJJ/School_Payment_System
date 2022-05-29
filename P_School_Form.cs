@@ -16,13 +16,13 @@ namespace Online_Payment
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
         public string scid;
         loginform loginform = new loginform();
+        Global global = new Global();
         public P_School_Form(loginform logfor)
         {
             InitializeComponent();
             this.loginform = logfor;
 
         }
-
         private void Search_Click(object sender, EventArgs e)
         {
             search.Text = "";
@@ -65,7 +65,7 @@ namespace Online_Payment
             {
                 SqlCommand cmd = new SqlCommand(addtocloud, conn);
                 cmd.Parameters.AddWithValue("@pid", loginform.getpid());
-                cmd.Parameters.AddWithValue("@sid", scid);
+                cmd.Parameters.AddWithValue("@sid", global.SCHOOL_ID);
                 cmd.Parameters.AddWithValue("@stuid", stuid.Text);
                 SqlDataAdapter adabter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
@@ -79,12 +79,48 @@ namespace Online_Payment
             }
             conn.Close();
             School_List();
+            
+        }
+        public void addemtptyrow(int i)
+        {
+            for (i = 0; i < 10; i++)
+            {
+                DataTable dt = schlistgrview.DataSource as DataTable;
+                DataRow dr = dt.NewRow();
+                dt.Rows.Add(dr);
+                schlistgrview.DataSource = dt;
+            }
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            school_add();
+            bool checkes  = checkifexist();
+            if (checkes)
+            {
+                school_add();
+            }
+            else
+            {
+                MessageBox.Show("unavailable Student Id");
+            }
         }
-
+        public bool checkifexist()
+        {
+            string query = "select count(*) from Student where Student_Id = "+ stuid.Text.ToString() + " and School_Id = "+ global.SCHOOL_ID;
+            MessageBox.Show(global.STUDENT_ID);
+            SqlConnection conn = new SqlConnection(Conn);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            string row = cmd.ExecuteScalar().ToString();
+            conn.Close();
+            if (row == "1")
+            {
+                return true;
+            }
+            else
+            { return false; }
+            
+        }
+        public static int countschid;
         public void School_List()
         {
             int pid = loginform.getpid();
@@ -96,6 +132,7 @@ namespace Online_Payment
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlCommand cmd1 = new SqlCommand(query1, conn);
+                countschid = Convert.ToInt32(cmd1.ExecuteScalar());
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -104,6 +141,11 @@ namespace Online_Payment
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            if(countschid < 11)
+            {
+                int j = 11 - countschid;
+                addemtptyrow(j);
             }
         }
 
@@ -128,39 +170,9 @@ namespace Online_Payment
         private void P_School_Form_Load(object sender, EventArgs e)
         {
             School_List();
+            
         }
-        //string scname, sclid;
-        //private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (schlistgrview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-        //    {
-        //        schlistgrview.CurrentRow.Selected = true;
-        //        scname = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
-        //        sclid = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
-        //    }
-        //    changepanle();
-        //}
 
-        //public string SCHOOL_NAME{
-        //    get { return scname; }
-        //    }
-        //public string getschoolId()
-        //{
-        //    return sclid;
-        //}
-
-        //public void changepanle()
-        //{
-        //    MessageBox.Show(SCHOOL_NAME);
-        //    //MessageBox.Show(getSchoolName());
-        //    P_School_Form pform = new P_School_Form(loginform);
-        //    pnlP_School.Controls.Clear();
-        //    choosen_school choosen = new choosen_school(pform, loginform);
-        //    choosen.TopLevel = false;
-        //    pnlP_School.Controls.Clear();
-        //    pnlP_School.Controls.Add(choosen);
-        //    choosen.Show();
-        //}
         private void Search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -191,9 +203,11 @@ namespace Online_Payment
                 address.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Adress"].FormattedValue.ToString();
                 schemail.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Email"].FormattedValue.ToString();
                 phonenum.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
-                scid = gvschoolsearch.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+                global.SCHOOL_ID = gvschoolsearch.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
             }
             
         }
+
+ 
     }
 }

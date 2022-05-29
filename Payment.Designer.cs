@@ -44,7 +44,7 @@
             this.pnlPaymnet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPaymnet.Location = new System.Drawing.Point(0, 0);
             this.pnlPaymnet.Name = "pnlPaymnet";
-            this.pnlPaymnet.Size = new System.Drawing.Size(888, 700);
+            this.pnlPaymnet.Size = new System.Drawing.Size(888, 800);
             this.pnlPaymnet.TabIndex = 77;
             this.pnlPaymnet.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlPaymnet_Paint);
             // 
@@ -56,7 +56,7 @@
             this.schlistgrview.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DeepSkyBlue;
             this.schlistgrview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.schlistgrview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -80,7 +80,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DeepSkyBlue;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.schlistgrview.DefaultCellStyle = dataGridViewCellStyle3;
-            this.schlistgrview.Location = new System.Drawing.Point(12, 164);
+            this.schlistgrview.Location = new System.Drawing.Point(0, 81);
             this.schlistgrview.Name = "schlistgrview";
             this.schlistgrview.ReadOnly = true;
             this.schlistgrview.RowHeadersVisible = false;
@@ -88,7 +88,7 @@
             this.schlistgrview.RowTemplate.Height = 50;
             this.schlistgrview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.schlistgrview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.schlistgrview.Size = new System.Drawing.Size(864, 524);
+            this.schlistgrview.Size = new System.Drawing.Size(888, 721);
             this.schlistgrview.TabIndex = 76;
             this.schlistgrview.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Schlistgrview_CellDoubleClick);
             // 
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(888, 700);
+            this.ClientSize = new System.Drawing.Size(888, 800);
             this.Controls.Add(this.pnlPaymnet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

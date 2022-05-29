@@ -47,17 +47,19 @@ namespace Online_Payment
         {
             School_List();
         }
+        public static int countschid;
         public void School_List()
         {
             int pid = loginform.getpid();
             string query = "select School_Name,School_Id from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id =" + pid + ")";
-           // string query1 = "select count(School_Id) as Number from Parent_cloud where Parent_Id = " + pid;
+             string query1 = "select count(School_Id) as Number from Parent_cloud where Parent_Id = " + pid;
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
             try
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
-               // SqlCommand cmd1 = new SqlCommand(query1, conn);
+               SqlCommand cmd1 = new SqlCommand(query1, conn);
+                countschid = Convert.ToInt32(cmd1.ExecuteScalar());
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -66,6 +68,11 @@ namespace Online_Payment
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            if(countschid < 11)
+            {
+                int j = 11 - countschid;
+                addemtptyrow(j);
             }
         }
         
@@ -100,10 +107,15 @@ namespace Online_Payment
             }
             changepanle();
         }
-        //public void getid()
-        //{
-        //    MessageBox.Show(global.SCHOOL_ID, "when change get id");
-        //}
-       
+        public void addemtptyrow(int i)
+        {
+            for (i = 0; i <10; i++)
+            {
+                DataTable dt = schlistgrview.DataSource as DataTable;
+                DataRow dr = dt.NewRow();
+                dt.Rows.Add(dr);
+                schlistgrview.DataSource = dt;
+            }
+        }
     }
 }

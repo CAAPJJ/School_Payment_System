@@ -252,7 +252,7 @@
             this.pnlP_School.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlP_School.Location = new System.Drawing.Point(0, 0);
             this.pnlP_School.Name = "pnlP_School";
-            this.pnlP_School.Size = new System.Drawing.Size(888, 700);
+            this.pnlP_School.Size = new System.Drawing.Size(888, 800);
             this.pnlP_School.TabIndex = 67;
             this.pnlP_School.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlP_School_Paint);
             // 
@@ -298,7 +298,7 @@
             this.gvschoolsearch.RowTemplate.Height = 50;
             this.gvschoolsearch.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gvschoolsearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvschoolsearch.Size = new System.Drawing.Size(390, 314);
+            this.gvschoolsearch.Size = new System.Drawing.Size(379, 314);
             this.gvschoolsearch.TabIndex = 65;
             this.gvschoolsearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gvschoolsearch_CellClick_1);
             // 
@@ -310,7 +310,7 @@
             this.schlistgrview.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DeepSkyBlue;
             this.schlistgrview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.schlistgrview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -345,7 +345,7 @@
             this.schlistgrview.RowTemplate.Height = 50;
             this.schlistgrview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.schlistgrview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.schlistgrview.Size = new System.Drawing.Size(479, 547);
+            this.schlistgrview.Size = new System.Drawing.Size(479, 686);
             this.schlistgrview.TabIndex = 0;
             // 
             // P_School_Form
@@ -353,7 +353,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(888, 700);
+            this.ClientSize = new System.Drawing.Size(888, 800);
             this.Controls.Add(this.pnlP_School);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

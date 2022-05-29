@@ -29,37 +29,23 @@ namespace Online_Payment
         {
             lbChoosenSchool.Text = global.SCHOOL_NAME;
             student_list();
-            addemtptyrow();
+           if(counts < 11)
+            {
+                int j = 11 - counts;
+                addemtptyrow(j);
+            }
         }
-
-       public void addemtptyrow()
+      public void addemtptyrow(int i)
         {
-            //Bitmap bmp;
-
-            //for (int x = 0; x <= stulistgrview.Rows.Count - 1; x++)
-
-            //{
-
-            //    DataGridViewImageCell cell = (DataGridViewImageCell)stulistgrview.Rows[x].Cells["Status"];
-
-            //    if (stulistgrview.Rows[x].Cells["Status"].Value.ToString() == "21")
-
-            //    {
-            //        bmp = new Bitmap(@"C:\Users\leul kahssaye\source\repos\CAAPJJ\School_Payment_System\Resources\winclose.png");
-            //    }
-
-            //    else
-
-            //    {
-
-            //        bmp = new Bitmap(@"C:\Users\leul kahssaye\source\repos\CAAPJJ\School_Payment_System\Resources\winclose.png");
-
-            //    }
-
-            //    cell.Value = bmp;
-
-            //}
+            for(i = 0; i<10; i++)
+            {
+                DataTable dt = stulistgrview.DataSource as DataTable;
+                DataRow dr = dt.NewRow();
+                dt.Rows.Add(dr);
+                stulistgrview.DataSource = dt;
+            }
         }
+     
         private void Stulistgrview_DoubleClick(object sender, EventArgs e)
         {
             changepanle();
@@ -78,21 +64,25 @@ namespace Online_Payment
         {
 
         }
+       public static int counts;
         public void student_list()
         {
             int pid = loginform.getpid();
             string query = "select First_Name,Last_Name,Student_Id from Student s where s.Student_Id in " +
                             "(select Student_Id from Parent_cloud p where Parent_Id = " + pid + " and p.School_Id =" +global.SCHOOL_ID+")";
+            string count = "select count(*) from Student s where s.Student_Id in " +
+                            "(select Student_Id from Parent_cloud p where Parent_Id = " + pid + " and p.School_Id =" + global.SCHOOL_ID + ")";
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
             try
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd1 = new SqlCommand(count, conn);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 stulistgrview.DataSource = dt;
-                addemtptyrow();
+                counts =Convert.ToInt32(cmd1.ExecuteScalar());
             }
             catch (SqlException ex)
             {
