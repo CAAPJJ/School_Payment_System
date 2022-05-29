@@ -49,6 +49,7 @@
             this.winmax = new System.Windows.Forms.PictureBox();
             this.minimize = new System.Windows.Forms.PictureBox();
             this.winclose = new System.Windows.Forms.PictureBox();
+            this.edit = new System.Windows.Forms.PictureBox();
             this.navpanel.SuspendLayout();
             this.userpicpnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userpic)).BeginInit();
@@ -57,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.winmax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winclose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit)).BeginInit();
             this.SuspendLayout();
             // 
             // navpanel
@@ -82,6 +84,7 @@
             // 
             // userpicpnl
             // 
+            this.userpicpnl.Controls.Add(this.edit);
             this.userpicpnl.Controls.Add(this.urname);
             this.userpicpnl.Controls.Add(this.userpic);
             resources.ApplyResources(this.userpicpnl, "userpicpnl");
@@ -212,6 +215,13 @@
             this.winclose.TabStop = false;
             this.winclose.Click += new System.EventHandler(this.Winclose_Click);
             // 
+            // edit
+            // 
+            resources.ApplyResources(this.edit, "edit");
+            this.edit.Name = "edit";
+            this.edit.TabStop = false;
+            this.edit.Click += new System.EventHandler(this.Edit_Click);
+            // 
             // Parent_Form
             // 
             resources.ApplyResources(this, "$this");
@@ -236,6 +246,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.winmax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winclose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,5 +272,6 @@
         private System.Windows.Forms.Panel titlebar;
         private System.Windows.Forms.PictureBox minimize;
         private System.Windows.Forms.PictureBox winmax;
+        private System.Windows.Forms.PictureBox edit;
     }
 }

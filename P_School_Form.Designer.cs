@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_School_Form));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.search = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.school_name = new System.Windows.Forms.TextBox();
@@ -51,12 +51,12 @@
             this.stuid = new System.Windows.Forms.TextBox();
             this.serch = new System.Windows.Forms.PictureBox();
             this.pnlP_School = new System.Windows.Forms.Panel();
+            this.gvschoolsearch = new System.Windows.Forms.DataGridView();
             this.schlistgrview = new System.Windows.Forms.DataGridView();
-            this.stugrv = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.serch)).BeginInit();
             this.pnlP_School.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvschoolsearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schlistgrview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stugrv)).BeginInit();
             this.SuspendLayout();
             // 
             // search
@@ -69,7 +69,7 @@
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(351, 29);
             this.search.TabIndex = 3;
-            this.search.Text = "Search Something";
+            this.search.Text = "Type here";
             this.search.Click += new System.EventHandler(this.Search_Click);
             this.search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Search_KeyDown);
             // 
@@ -227,7 +227,7 @@
             // pnlP_School
             // 
             this.pnlP_School.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.pnlP_School.Controls.Add(this.stugrv);
+            this.pnlP_School.Controls.Add(this.gvschoolsearch);
             this.pnlP_School.Controls.Add(this.label4);
             this.pnlP_School.Controls.Add(this.label7);
             this.pnlP_School.Controls.Add(this.button2);
@@ -251,38 +251,81 @@
             this.pnlP_School.TabIndex = 67;
             this.pnlP_School.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlP_School_Paint);
             // 
+            // gvschoolsearch
+            // 
+            this.gvschoolsearch.AllowUserToAddRows = false;
+            this.gvschoolsearch.AllowUserToDeleteRows = false;
+            this.gvschoolsearch.AllowUserToResizeColumns = false;
+            this.gvschoolsearch.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Red;
+            this.gvschoolsearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.gvschoolsearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvschoolsearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gvschoolsearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gvschoolsearch.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvschoolsearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.gvschoolsearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvschoolsearch.DefaultCellStyle = dataGridViewCellStyle9;
+            this.gvschoolsearch.Location = new System.Drawing.Point(498, 113);
+            this.gvschoolsearch.Name = "gvschoolsearch";
+            this.gvschoolsearch.ReadOnly = true;
+            this.gvschoolsearch.RowHeadersVisible = false;
+            this.gvschoolsearch.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gvschoolsearch.RowTemplate.Height = 50;
+            this.gvschoolsearch.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gvschoolsearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvschoolsearch.Size = new System.Drawing.Size(390, 314);
+            this.gvschoolsearch.TabIndex = 65;
+            // 
             // schlistgrview
             // 
             this.schlistgrview.AllowUserToAddRows = false;
             this.schlistgrview.AllowUserToDeleteRows = false;
             this.schlistgrview.AllowUserToResizeColumns = false;
             this.schlistgrview.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Red;
-            this.schlistgrview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Red;
+            this.schlistgrview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.schlistgrview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.schlistgrview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.schlistgrview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.schlistgrview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.schlistgrview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.schlistgrview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.schlistgrview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.schlistgrview.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.schlistgrview.DefaultCellStyle = dataGridViewCellStyle12;
             this.schlistgrview.Location = new System.Drawing.Point(13, 111);
             this.schlistgrview.Name = "schlistgrview";
             this.schlistgrview.ReadOnly = true;
@@ -293,51 +336,7 @@
             this.schlistgrview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.schlistgrview.Size = new System.Drawing.Size(479, 547);
             this.schlistgrview.TabIndex = 0;
-            this.schlistgrview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Schlistgrview_CellClick);
-            this.schlistgrview.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Schlistgrview_CellDoubleClick);
-            // 
-            // stugrv
-            // 
-            this.stugrv.AllowUserToAddRows = false;
-            this.stugrv.AllowUserToDeleteRows = false;
-            this.stugrv.AllowUserToResizeColumns = false;
-            this.stugrv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Red;
-            this.stugrv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.stugrv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.stugrv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.stugrv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.stugrv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stugrv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.stugrv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.stugrv.DefaultCellStyle = dataGridViewCellStyle3;
-            this.stugrv.Location = new System.Drawing.Point(498, 113);
-            this.stugrv.Name = "stugrv";
-            this.stugrv.ReadOnly = true;
-            this.stugrv.RowHeadersVisible = false;
-            this.stugrv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.stugrv.RowTemplate.Height = 50;
-            this.stugrv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.stugrv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stugrv.Size = new System.Drawing.Size(390, 314);
-            this.stugrv.TabIndex = 65;
+           // this.schlistgrview.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Schlistgrview_CellDoubleClick);
             // 
             // P_School_Form
             // 
@@ -354,8 +353,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.serch)).EndInit();
             this.pnlP_School.ResumeLayout(false);
             this.pnlP_School.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvschoolsearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schlistgrview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stugrv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,6 +378,6 @@
         private System.Windows.Forms.TextBox stuid;
         private System.Windows.Forms.Panel pnlP_School;
         private System.Windows.Forms.DataGridView schlistgrview;
-        private System.Windows.Forms.DataGridView stugrv;
+        private System.Windows.Forms.DataGridView gvschoolsearch;
     }
 }

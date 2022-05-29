@@ -14,17 +14,16 @@ namespace Online_Payment
     public partial class ProfileForm : Form
     {
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
-
-        public ProfileForm()
+        loginform loginform = new loginform();
+        public ProfileForm(loginform logfor)
         {
             InitializeComponent();
+            this.loginform = logfor;
            // Fill_Profile();
         }
 
         public void Fill_Profile()
         {
-            loginform loginform = new loginform();
-            ProfileForm pro = new ProfileForm();
             string pass = loginform.User_Password.ToString();
             string username = loginform.Get_User_Name.ToString();
             string query = "execute School_Student_List '" + username + "'," + "'" + pass + "'";
@@ -54,6 +53,11 @@ namespace Online_Payment
         private void Cancelreg_Click(object sender, EventArgs e)
         {
             fname.Enabled = true;
+            lname.Enabled = true;
+            ages.Enabled = true;
+            usrname.Enabled = true;
+            email.Enabled = true;
+            phonenum.Enabled = true;
             save.Enabled = true;
         }
 
@@ -81,6 +85,23 @@ namespace Online_Payment
             //{
             //    MessageBox.Show(ex.Message);
             //}
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            string query = "update Parent set First_Name = "+fname.Text+",Last_Name = "+lname.Text+",Age = "+ages.Text+",User_Name = "+usrname.Text+" where Parent_Id ="+loginform.getpid();
+            SqlConnection conn = new SqlConnection(Conn);
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Update Successfully");
+            }catch(SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
         }
     }
 }

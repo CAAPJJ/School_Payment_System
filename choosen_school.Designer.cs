@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbChoosenSchool = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.lbSchoolName = new System.Windows.Forms.Label();
             this.stulistgrview = new System.Windows.Forms.DataGridView();
             this.pnlliststudent = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.stulistgrview)).BeginInit();
             this.pnlliststudent.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +82,7 @@
             this.lbChoosenSchool.Size = new System.Drawing.Size(269, 38);
             this.lbChoosenSchool.TabIndex = 74;
             this.lbChoosenSchool.Text = "Choosen Schools";
+            this.lbChoosenSchool.Click += new System.EventHandler(this.LbChoosenSchool_Click);
             // 
             // label3
             // 
@@ -94,6 +96,7 @@
             this.label3.Size = new System.Drawing.Size(166, 29);
             this.label3.TabIndex = 73;
             this.label3.Text = "Student Name";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // label2
             // 
@@ -142,23 +145,23 @@
             this.stulistgrview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.stulistgrview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.stulistgrview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(26)))), ((int)(((byte)(127)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.stulistgrview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(26)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.stulistgrview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.stulistgrview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(26)))), ((int)(((byte)(127)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.stulistgrview.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(26)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.stulistgrview.DefaultCellStyle = dataGridViewCellStyle2;
             this.stulistgrview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.stulistgrview.Location = new System.Drawing.Point(42, 147);
             this.stulistgrview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -167,13 +170,14 @@
             this.stulistgrview.RowHeadersVisible = false;
             this.stulistgrview.RowTemplate.Height = 24;
             this.stulistgrview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stulistgrview.Size = new System.Drawing.Size(149, 71);
+            this.stulistgrview.Size = new System.Drawing.Size(215, 217);
             this.stulistgrview.TabIndex = 77;
             this.stulistgrview.DoubleClick += new System.EventHandler(this.Stulistgrview_DoubleClick);
             // 
             // pnlliststudent
             // 
             this.pnlliststudent.BackColor = System.Drawing.Color.Yellow;
+            this.pnlliststudent.Controls.Add(this.textBox1);
             this.pnlliststudent.Controls.Add(this.stulistgrview);
             this.pnlliststudent.Controls.Add(this.label7);
             this.pnlliststudent.Controls.Add(this.label3);
@@ -188,6 +192,13 @@
             this.pnlliststudent.Size = new System.Drawing.Size(888, 700);
             this.pnlliststudent.TabIndex = 78;
             this.pnlliststudent.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(359, 333);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 78;
             // 
             // choosen_school
             // 
@@ -219,5 +230,6 @@
         private System.Windows.Forms.Label lbSchoolName;
         private System.Windows.Forms.DataGridView stulistgrview;
         private System.Windows.Forms.Panel pnlliststudent;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -143,27 +143,17 @@
   <data name="&gt;&gt;pnlnav.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="urname.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;edit.Name" xml:space="preserve">
+    <value>edit</value>
   </data>
-  <data name="urname.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  <data name="&gt;&gt;edit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="urname.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;edit.Parent" xml:space="preserve">
+    <value>userpicpnl</value>
   </data>
-  <data name="urname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 124</value>
-  </data>
-  <data name="urname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 20</value>
-  </data>
-  <data name="urname.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="urname.Text" xml:space="preserve">
-    <value>User Name</value>
+  <data name="&gt;&gt;edit.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;urname.Name" xml:space="preserve">
     <value>urname</value>
@@ -175,41 +165,7 @@
     <value>userpicpnl</value>
   </data>
   <data name="&gt;&gt;urname.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="userpic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAxtJREFUaEPt
-        WLluFEEQbUCYgCtAgghCjoQrgIyMhBsJ/wISV2aB8O70dmRkfgBiLhkDX4AECSR8ACw2OIAEkBzYa0HX
-        WLip6q6dmT1Yr3d6ZhY0T3raVdXU0T3V1d0jSpQo4RGXzUYhYRT5BFlHLjHrogaP8XfUPjOUkHAROYs0
-        q3BWKLjAVkMAZdbj7E52SbQ3a3DH2haOjuTDbyKAcRGEh8SY2WypwsOoq1hd8lkaRKFwZZNIHqZwVrew
-        thM3zVZM+mmbzXnW5gxlRjB4suanhDDrWNsD+IyE6YTdTDEL23UbTgJLo9fMt4PehAy/R/YKLrEmR7hW
-        6RKgml8rAqhG9hIesTRHSPgYJaDgIEv7h1vYzQHUWZojJDSiBNZSPk2QTTyABktzRPoBbIvsJSywNEf8
-        8yXkzjbNBCos7R8Sgsi+Bg9ZmiPa2yi1xn5hy0f/iOwLaaPu5BlvZLTD9ruRBfAssitsIyPQqTJOhDjd
-        803QzLcmvyKUPsfagkAHspZB4A5Lm1QQHrHdiUj/bc0nysZxgr0UCHecbhvEqlxBTljboQGdKqmeuyec
-        5EzxZfM30GKkjkJnGwkfkLTZEd/bVkm6ob1SlijxP6PyczcuxOfIRWS3zuKTi3azo5he4JKfbwuSB+f9
-        DMLNfLcA2ZPeRGoky0aFx1iaHYLweBTPy0UndmZYkj28xpTwO3KWxy7qjuk+B5C8eOi9LM0OVb3P7wCC
-        8GXkLAivsjQ7BPp6PAB9n6UpIMMrsUP4Im6Z7azxD/It4WscT59kTQrQ1+VWp2/sJcU33Heit3EceCdG
-        zQbWpoTSp9BhvJglfBJq+QRr04N8kc/Yf4gt+yhrPUHqa+iYblLNILQmcH3o0wN1J3t30Gd4jSX9Lmf3
-        lcLeuhJflWMu4K75AhfgmH1b1Elumx1YFiPihtlk/5OMdPQMPUs2HX6o4+mzHC0jqMZOe7ui19yRwMAk
-        Xw/E+NIujpID1K89GPQuco6TGIRzOBmT/k6eg6IKB2z/rul7WNOvMbHPSDrBApP+4yINX9lnaD0p2M/W
-        JUqUGBhC/AFpjEGNWGPGLAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="userpic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="userpic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-3, -3</value>
-  </data>
-  <data name="userpic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 128</value>
-  </data>
-  <data name="userpic.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="userpic.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;userpic.Name" xml:space="preserve">
     <value>userpic</value>
@@ -221,7 +177,7 @@
     <value>userpicpnl</value>
   </data>
   <data name="&gt;&gt;userpic.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="userpicpnl.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
@@ -244,6 +200,7 @@
   <data name="&gt;&gt;userpicpnl.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="logout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -696,6 +653,85 @@
   <data name="&gt;&gt;navpanel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="urname.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="urname.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  </data>
+  <data name="urname.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="urname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 124</value>
+  </data>
+  <data name="urname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 20</value>
+  </data>
+  <data name="urname.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="urname.Text" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="&gt;&gt;urname.Name" xml:space="preserve">
+    <value>urname</value>
+  </data>
+  <data name="&gt;&gt;urname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;urname.Parent" xml:space="preserve">
+    <value>userpicpnl</value>
+  </data>
+  <data name="&gt;&gt;urname.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="userpic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAxtJREFUaEPt
+        WLluFEEQbUCYgCtAgghCjoQrgIyMhBsJ/wISV2aB8O70dmRkfgBiLhkDX4AECSR8ACw2OIAEkBzYa0HX
+        WLip6q6dmT1Yr3d6ZhY0T3raVdXU0T3V1d0jSpQo4RGXzUYhYRT5BFlHLjHrogaP8XfUPjOUkHAROYs0
+        q3BWKLjAVkMAZdbj7E52SbQ3a3DH2haOjuTDbyKAcRGEh8SY2WypwsOoq1hd8lkaRKFwZZNIHqZwVrew
+        thM3zVZM+mmbzXnW5gxlRjB4suanhDDrWNsD+IyE6YTdTDEL23UbTgJLo9fMt4PehAy/R/YKLrEmR7hW
+        6RKgml8rAqhG9hIesTRHSPgYJaDgIEv7h1vYzQHUWZojJDSiBNZSPk2QTTyABktzRPoBbIvsJSywNEf8
+        8yXkzjbNBCos7R8Sgsi+Bg9ZmiPa2yi1xn5hy0f/iOwLaaPu5BlvZLTD9ruRBfAssitsIyPQqTJOhDjd
+        803QzLcmvyKUPsfagkAHspZB4A5Lm1QQHrHdiUj/bc0nysZxgr0UCHecbhvEqlxBTljboQGdKqmeuyec
+        5EzxZfM30GKkjkJnGwkfkLTZEd/bVkm6ob1SlijxP6PyczcuxOfIRWS3zuKTi3azo5he4JKfbwuSB+f9
+        DMLNfLcA2ZPeRGoky0aFx1iaHYLweBTPy0UndmZYkj28xpTwO3KWxy7qjuk+B5C8eOi9LM0OVb3P7wCC
+        8GXkLAivsjQ7BPp6PAB9n6UpIMMrsUP4Im6Z7azxD/It4WscT59kTQrQ1+VWp2/sJcU33Heit3EceCdG
+        zQbWpoTSp9BhvJglfBJq+QRr04N8kc/Yf4gt+yhrPUHqa+iYblLNILQmcH3o0wN1J3t30Gd4jSX9Lmf3
+        lcLeuhJflWMu4K75AhfgmH1b1Elumx1YFiPihtlk/5OMdPQMPUs2HX6o4+mzHC0jqMZOe7ui19yRwMAk
+        Xw/E+NIujpID1K89GPQuco6TGIRzOBmT/k6eg6IKB2z/rul7WNOvMbHPSDrBApP+4yINX9lnaD0p2M/W
+        JUqUGBhC/AFpjEGNWGPGLAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="userpic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="userpic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, -3</value>
+  </data>
+  <data name="userpic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 128</value>
+  </data>
+  <data name="userpic.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="userpic.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;userpic.Name" xml:space="preserve">
+    <value>userpic</value>
+  </data>
+  <data name="&gt;&gt;userpic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;userpic.Parent" xml:space="preserve">
+    <value>userpicpnl</value>
+  </data>
+  <data name="&gt;&gt;userpic.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="fileSystemWatcher1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -937,5 +973,40 @@
   </data>
   <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="edit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAEZSURBVGhD7ZhfCsIwDId7JwU9iOA5PMD+3NFzKHtzmw+a2BZqmtYXWVLIB7+HNRl8aSnKnGEY
+        iujni+uXO+TqxnUfVhuhX0bIK8kEQxxDVTm5fENDlOVjFA/By8/M2uS69RDeUgIv70VLNTUXuyYf4Xuu
+        oSoIL4YZQofHn8SD9NxCVYiyPOYJOX/6vPyU1ELgd0KMunwMDjFAGHl4XwxeHiVRFqVpjUahfLyw43KC
+        59oQ33djU37JR/xJ0D6M4p2PdOsO1vEPHO1tYOdN/t+YvBQmL4XJS2HyUpi8FCYvhclLkgs1JI9QqVy+
+        8OkDTk4FVCxF9c5HqFykCXkkF6xFmTzCi3JRKI/wsjRK5RFeOI1iecMwjG1w7g36tl/I9dCPWAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="edit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 104</value>
+  </data>
+  <data name="edit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 21</value>
+  </data>
+  <data name="edit.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="edit.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;edit.Name" xml:space="preserve">
+    <value>edit</value>
+  </data>
+  <data name="&gt;&gt;edit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;edit.Parent" xml:space="preserve">
+    <value>userpicpnl</value>
+  </data>
+  <data name="&gt;&gt;edit.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
 </root>

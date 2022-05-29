@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.cancelreg = new System.Windows.Forms.Button();
             this.female = new System.Windows.Forms.RadioButton();
@@ -87,7 +87,7 @@
             this.female.Enabled = false;
             this.female.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
             this.female.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.female.Location = new System.Drawing.Point(251, 269);
+            this.female.Location = new System.Drawing.Point(252, 244);
             this.female.Name = "female";
             this.female.Size = new System.Drawing.Size(85, 24);
             this.female.TabIndex = 53;
@@ -101,7 +101,7 @@
             this.male.Enabled = false;
             this.male.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
             this.male.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.male.Location = new System.Drawing.Point(161, 269);
+            this.male.Location = new System.Drawing.Point(162, 244);
             this.male.Name = "male";
             this.male.Size = new System.Drawing.Size(67, 24);
             this.male.TabIndex = 52;
@@ -113,7 +113,7 @@
             // 
             this.email.Enabled = false;
             this.email.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
-            this.email.Location = new System.Drawing.Point(161, 444);
+            this.email.Location = new System.Drawing.Point(161, 426);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(206, 27);
             this.email.TabIndex = 51;
@@ -144,7 +144,7 @@
             // 
             this.ages.Enabled = false;
             this.ages.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
-            this.ages.Location = new System.Drawing.Point(162, 309);
+            this.ages.Location = new System.Drawing.Point(162, 291);
             this.ages.Name = "ages";
             this.ages.Size = new System.Drawing.Size(206, 27);
             this.ages.TabIndex = 46;
@@ -155,7 +155,7 @@
             this.age.Enabled = false;
             this.age.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
             this.age.ForeColor = System.Drawing.Color.Lime;
-            this.age.Location = new System.Drawing.Point(114, 316);
+            this.age.Location = new System.Drawing.Point(114, 298);
             this.age.Name = "age";
             this.age.Size = new System.Drawing.Size(38, 20);
             this.age.TabIndex = 45;
@@ -168,7 +168,7 @@
             this.sex.Enabled = false;
             this.sex.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
             this.sex.ForeColor = System.Drawing.Color.Lime;
-            this.sex.Location = new System.Drawing.Point(115, 271);
+            this.sex.Location = new System.Drawing.Point(116, 246);
             this.sex.Name = "sex";
             this.sex.Size = new System.Drawing.Size(36, 20);
             this.sex.TabIndex = 44;
@@ -189,6 +189,7 @@
             this.save.Text = "Save";
             this.save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.Save_Click);
             // 
             // label4
             // 
@@ -196,7 +197,7 @@
             this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(98, 447);
+            this.label4.Location = new System.Drawing.Point(98, 429);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 20);
             this.label4.TabIndex = 42;
@@ -206,7 +207,7 @@
             // 
             this.phonenum.Enabled = false;
             this.phonenum.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
-            this.phonenum.Location = new System.Drawing.Point(161, 497);
+            this.phonenum.Location = new System.Drawing.Point(161, 479);
             this.phonenum.Name = "phonenum";
             this.phonenum.Size = new System.Drawing.Size(211, 27);
             this.phonenum.TabIndex = 41;
@@ -217,7 +218,7 @@
             this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(16, 497);
+            this.label3.Location = new System.Drawing.Point(16, 479);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 20);
             this.label3.TabIndex = 40;
@@ -227,7 +228,7 @@
             // 
             this.usrname.Enabled = false;
             this.usrname.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
-            this.usrname.Location = new System.Drawing.Point(162, 374);
+            this.usrname.Location = new System.Drawing.Point(162, 356);
             this.usrname.Name = "usrname";
             this.usrname.Size = new System.Drawing.Size(206, 27);
             this.usrname.TabIndex = 37;
@@ -238,7 +239,7 @@
             this.pusername.Enabled = false;
             this.pusername.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
             this.pusername.ForeColor = System.Drawing.Color.Lime;
-            this.pusername.Location = new System.Drawing.Point(58, 381);
+            this.pusername.Location = new System.Drawing.Point(58, 363);
             this.pusername.Name = "pusername";
             this.pusername.Size = new System.Drawing.Size(94, 20);
             this.pusername.TabIndex = 36;
@@ -285,23 +286,23 @@
             this.addschool.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.addschool.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.addschool.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(26)))), ((int)(((byte)(127)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.addschool.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(26)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.addschool.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.addschool.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(26)))), ((int)(((byte)(127)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.addschool.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(26)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.addschool.DefaultCellStyle = dataGridViewCellStyle4;
             this.addschool.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.addschool.Location = new System.Drawing.Point(423, 136);
             this.addschool.Name = "addschool";

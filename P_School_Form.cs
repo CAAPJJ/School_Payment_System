@@ -14,13 +14,14 @@ namespace Online_Payment
     public partial class P_School_Form : Form
     {
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
+        public string scid;
         loginform loginform = new loginform();
-        
+
         public P_School_Form(loginform logfor)
         {
             InitializeComponent();
             this.loginform = logfor;
-           
+
         }
 
         private void Search_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace Online_Payment
             search.Text = "";
             search.ForeColor = Color.Black;
         }
-        
+
         public void search_school()
         {
             string searches = "execute Search_School @Schname";
@@ -38,46 +39,34 @@ namespace Online_Payment
             SqlDataAdapter adabter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adabter.Fill(table);
-            stugrv.DataSource = table;
+            gvschoolsearch.DataSource = table;
             conn.Close();
         }
         private void Serch_Click(object sender, EventArgs e)
         {
             search_school();
+           
         }
         public void RefreshData()
         {
-            SqlConnection conn = new SqlConnection(Conn);
-            SqlCommand cmd = new SqlCommand("select *from Student", conn);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            stugrv.DataSource = dt;
+            //SqlConnection conn = new SqlConnection(Conn);
+            //SqlCommand cmd = new SqlCommand("select *from Student", conn);
+            //SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //sda.Fill(dt);
+            //stugrv.DataSource = dt;
         }
-
-       public string scid;
-        private void Stugrv_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void gvschoolsearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (stugrv.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            if (gvschoolsearch.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                stugrv.CurrentRow.Selected = true;
-                school_name.Text = stugrv.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
-                address.Text = stugrv.Rows[e.RowIndex].Cells["Adress"].FormattedValue.ToString();
-                schemail.Text = stugrv.Rows[e.RowIndex].Cells["School_Email"].FormattedValue.ToString();
-                phonenum.Text = stugrv.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
-                scid = stugrv.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+                gvschoolsearch.CurrentRow.Selected = true;
+                school_name.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
+                address.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Adress"].FormattedValue.ToString();
+                schemail.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Email"].FormattedValue.ToString();
+                phonenum.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
+                scid = gvschoolsearch.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
             }
-        }
-        public int schid()
-        {
-            int sid = Convert.ToInt32(scid);
-            return sid;
-        }
-
-        public int paid()
-        {
-            int j = loginform.getpid();
-            return j;
         }
         public void school_add()
         {
@@ -93,7 +82,7 @@ namespace Online_Payment
                 SqlDataAdapter adabter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 adabter.Fill(table);
-                stugrv.DataSource = table;
+                gvschoolsearch.DataSource = table;
                 MessageBox.Show("School Add Successfully");
             }
             catch (SqlException ex)
@@ -110,11 +99,9 @@ namespace Online_Payment
 
         public void School_List()
         {
-            //string schname = null;
             int pid = loginform.getpid();
-            //string count = null;
-            string query = "select School_Name,School_Id from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id ="+pid+")";
-            string query1 = "select count(School_Id) as Number from Parent_cloud where Parent_Id = "+pid;
+            string query = "select School_Name,School_Id from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id =" + pid + ")";
+            string query1 = "select count(School_Id) as Number from Parent_cloud where Parent_Id = " + pid;
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
             try
@@ -126,11 +113,12 @@ namespace Online_Payment
                 sda.Fill(dt);
                 schlistgrview.DataSource = dt;
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void Label3_Click(object sender, EventArgs e)
         {
 
@@ -153,51 +141,43 @@ namespace Online_Payment
         {
             School_List();
         }
-        string scname,sclid;
-        private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (schlistgrview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                schlistgrview.CurrentRow.Selected = true;
-                scname = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
-                sclid = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
-            }
-            changepanle();
-        }
+        //string scname, sclid;
+        //private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (schlistgrview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+        //    {
+        //        schlistgrview.CurrentRow.Selected = true;
+        //        scname = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
+        //        sclid = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+        //    }
+        //    changepanle();
+        //}
 
-        public string getSchoolName()
-        {
-            return scname;
-        }
-        public string getschoolId()
-        {
-            return sclid;
-        }
+        //public string SCHOOL_NAME{
+        //    get { return scname; }
+        //    }
+        //public string getschoolId()
+        //{
+        //    return sclid;
+        //}
 
-        public void changepanle()
-        {
-            MessageBox.Show(getSchoolName());
-            P_School_Form pform = new P_School_Form(loginform);
-            pnlP_School.Controls.Clear();
-            choosen_school choosen = new choosen_school(loginform, pform);
-            choosen.TopLevel = false;
-            pnlP_School.Controls.Clear();
-            pnlP_School.Controls.Add(choosen);
-            choosen.Show();
-        }
-
-        private void Schlistgrview_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           // pform.ShowThisForm(new choosen_school());
-           
-        }
-
+        //public void changepanle()
+        //{
+        //    MessageBox.Show(SCHOOL_NAME);
+        //    //MessageBox.Show(getSchoolName());
+        //    P_School_Form pform = new P_School_Form(loginform);
+        //    pnlP_School.Controls.Clear();
+        //    choosen_school choosen = new choosen_school(pform, loginform);
+        //    choosen.TopLevel = false;
+        //    pnlP_School.Controls.Clear();
+        //    pnlP_School.Controls.Add(choosen);
+        //    choosen.Show();
+        //}
         private void Search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 search_school();
-
             }
         }
 

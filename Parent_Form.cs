@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Online_Payment
 {
@@ -61,10 +62,10 @@ namespace Online_Payment
 
         private void Profile_Click(object sender, EventArgs e)
         {
-            ProfileForm profile = new ProfileForm();
+            ProfileForm profile = new ProfileForm(loginform);
             profile.Fill_Profile();
             Activate_Button(sender);
-            ShowThisForm(new ProfileForm());
+            ShowThisForm(new ProfileForm(loginform));
             lbltop.Text = "Profile";
             labels();
         }
@@ -192,6 +193,9 @@ namespace Online_Payment
             Application.Exit();
         }
 
-      
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

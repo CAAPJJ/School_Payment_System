@@ -35,7 +35,7 @@ namespace Online_Payment
             try
             {
                 conn.Open();
-                string q1 = "";
+                //string q1 = "";
                 conn.Close();
             }catch (Exception ex)
             {
@@ -43,19 +43,76 @@ namespace Online_Payment
             }
         }
 
-        public void get_Id()
+        //public void get_Id()
+        //{
+        //    SqlConnection conn = new SqlConnection(Conn);
+        //    loginform loginform = new loginform();
+        //    conn.Open();
+        //    SqlDataReader dr;
+        //    SqlCommand cmd = new SqlCommand("select Parent_Id from Parent Where User_Name ='"+loginform.Get_User_Name+"' and Password = '"+loginform.User_Password+"'", conn);
+        //    dr = cmd.ExecuteReader();
+        //    id = dr.GetValue(0).ToString();
+        //    MessageBox.Show(id);
+        //    conn.Close();
+        //}
+
+        private void Payment_Load(object sender, EventArgs e)
         {
+            School_List();
+        }
+        public void School_List()
+        {
+            int pid = loginform.getpid();
+            string query = "select School_Name,School_Id from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id =" + pid + ")";
+           // string query1 = "select count(School_Id) as Number from Parent_cloud where Parent_Id = " + pid;
             SqlConnection conn = new SqlConnection(Conn);
-            loginform loginform = new loginform();
             conn.Open();
-            SqlDataReader dr;
-            SqlCommand cmd = new SqlCommand("select Parent_Id from Parent Where User_Name ='"+loginform.Get_User_Name+"' and Password = '"+loginform.User_Password+"'", conn);
-            dr = cmd.ExecuteReader();
-            id = dr.GetValue(0).ToString();
-            MessageBox.Show(id);
-            conn.Close();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+               // SqlCommand cmd1 = new SqlCommand(query1, conn);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                schlistgrview.DataSource = dt;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+        public void changepanle()
+        {
+            //choosen_school choosens = new choosen_school();
+            //((TextBox)choosens.Controls["textBox1"]).Text = "leul";
+            MessageBox.Show(scild);
+            MessageBox.Show(SCHOOL_NAME);
+            Payment pform = new Payment(loginform);
+            pnlPaymnet.Controls.Clear();
+            choosen_school choosen = new choosen_school();
+            choosen.TopLevel = false;
+            pnlPaymnet.Controls.Clear();
+            pnlPaymnet.Controls.Add(choosen);
+            choosen.Show();
+        }
+        public string SCHOOL_NAME { get; private set; }
+        public string SCHOOL_ID { get; private set; }
+        public string scild;
+        private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (schlistgrview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                schlistgrview.CurrentRow.Selected = true;
+                SCHOOL_NAME = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
+                scild = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+            }
+            changepanle();
         }
 
-        
+        //public string getschoolId()
+        //{
+        //    return sclid;
+        //}
     }
 }
