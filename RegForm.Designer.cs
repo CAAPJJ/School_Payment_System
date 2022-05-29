@@ -191,6 +191,7 @@
             this.cancelreg.TabIndex = 32;
             this.cancelreg.Text = "Go back TO Login";
             this.cancelreg.UseVisualStyleBackColor = true;
+            this.cancelreg.Click += new System.EventHandler(this.Cancelreg_Click_1);
             // 
             // female
             // 
@@ -203,6 +204,7 @@
             this.female.TabStop = true;
             this.female.Text = "Female";
             this.female.UseVisualStyleBackColor = true;
+            this.female.CheckedChanged += new System.EventHandler(this.Female_CheckedChanged_1);
             // 
             // male
             // 
@@ -215,6 +217,7 @@
             this.male.TabStop = true;
             this.male.Text = "Male";
             this.male.UseVisualStyleBackColor = true;
+            this.male.CheckedChanged += new System.EventHandler(this.Male_CheckedChanged_1);
             // 
             // email
             // 
@@ -303,6 +306,7 @@
             this.Controls.Add(this.finame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Register";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegForm_FormClosing);
             this.ResumeLayout(false);

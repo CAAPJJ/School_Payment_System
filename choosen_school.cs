@@ -30,6 +30,8 @@ namespace Online_Payment
         }
         private void Choosen_school_Load(object sender, EventArgs e)
         {
+            Global global = new Global();
+            MessageBox.Show(global.SCHOOL_ID,"remove hope");
             lbChoosenSchool.Text = loginform.getpid().ToString();
             student_list();
         }
@@ -40,8 +42,9 @@ namespace Online_Payment
         }
         public void changepanle()
         {
-            MessageBox.Show(pforms.SCHOOL_ID,"School ID");
-            MessageBox.Show(pforms.SCHOOL_NAME, "School NAME");
+            
+            //MessageBox.Show(pforms.SCHOOL_ID,"School ID");
+            //MessageBox.Show(pforms.SCHOOL_NAME, "School NAME");
 
             //pnlliststudent.Controls.Clear();
             //Payme
@@ -59,7 +62,7 @@ namespace Online_Payment
         public void student_list()
         {
             int pid = loginform.getpid();
-            string scid = pforms.SCHOOL_ID;
+            //string scid = pforms.SCHOOL_ID;
             string query = "select First_Name,Last_Name,Student_Id from Student s where s.Student_Id in " +
                             "(select Student_Id from Parent_cloud p where Parent_Id = " + pid + " and p.School_Id =" +1+")";
             SqlConnection conn = new SqlConnection(Conn);

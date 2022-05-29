@@ -15,8 +15,6 @@ namespace Online_Payment
 
     {
         String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
-
-
         String Gender;
         public RegForm()
         {
@@ -28,16 +26,6 @@ namespace Online_Payment
             Application.Exit();
         }
 
-        private void Male_CheckedChanged(object sender, EventArgs e)
-        {
-            Gender = "Male";
-        }
-
-        private void Female_CheckedChanged(object sender, EventArgs e)
-        {
-            Gender = "Female";
-        }
-
         private void Label3_Click(object sender, EventArgs e)
         {
 
@@ -47,20 +35,18 @@ namespace Online_Payment
         {
             passe.UseSystemPasswordChar = false;
             confpass.UseSystemPasswordChar = false;
-            //show.Visible = false;
-            //hide.Visible = true;
         }
 
         private void Hide_Click(object sender, EventArgs e)
         {
             passe.UseSystemPasswordChar = true;
             confpass.UseSystemPasswordChar = true;
-            //show.Visible = true;
-            //hide.Visible = false;
         }
 
         private void Submite_Click(object sender, EventArgs e)
         {
+            Random random = new Random();
+            int Account = random.Next(1000, 9999);
             try
             {
                 //string name = fnapame.Text.ToString();
@@ -77,35 +63,30 @@ namespace Online_Payment
                     {
                         SqlConnection conn = new SqlConnection(Conn);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("insert into Parent values(@Fname,@Lname,@gender,@age,@usrname,@pass,@email,@phonenumber)", conn);
-                        cmd.Parameters.AddWithValue("@Fname", fname.Text.ToString());
-                        cmd.Parameters.AddWithValue("@Lname", lname.Text.ToString());
-                        cmd.Parameters.AddWithValue("@gender", Gender);
+                        SqlCommand cmd = new SqlCommand("execute Parent_val @fname,@lname,@gender,@age,@username,@passe, @email, @phone, @Account", conn);
+                        cmd.Parameters.AddWithValue("@fname", fname.Text.ToString());
+                        cmd.Parameters.AddWithValue("@lname", lname.Text.ToString());
+                        cmd.Parameters.AddWithValue("@gender",Gender);
                         cmd.Parameters.AddWithValue("@age", ages.Text.ToString());
-                        cmd.Parameters.AddWithValue("@usrname", usrname.Text.ToString());
-                        cmd.Parameters.AddWithValue("@pass", passe.Text.ToString());
+                        cmd.Parameters.AddWithValue("@username", usrname.Text.ToString());
+                        cmd.Parameters.AddWithValue("@passe", passe.Text.ToString());
                         cmd.Parameters.AddWithValue("@email", email.Text.ToString());
-                        cmd.Parameters.AddWithValue("@phonenumber", phonenum.Text.ToString());
+                        cmd.Parameters.AddWithValue("@phone", phonenum.Text.ToString());
+                        cmd.Parameters.AddWithValue("@Account", Account);
                         cmd.ExecuteNonQuery();
                         conn.Close();
                         MessageBox.Show("you are Successuflly Register");
-
+                        MessageBox.Show("you Account Number is "+Account,"Secrete");
                     }
                     else
                     {
                         MessageBox.Show("Password didn't match");
                     }
                 }
-                /*
-                SqlDataAdapter adpt = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adpt.Fill(ds);*/
-                
-               
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
 
         }
@@ -120,6 +101,23 @@ namespace Online_Payment
         private void Label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Cancelreg_Click_1(object sender, EventArgs e)
+        {
+            loginform loginform = new loginform();
+            loginform.Show();
+            this.Close();
+        }
+
+        private void Male_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Gender = "Male";
+        }
+
+        private void Female_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Gender = "Female";
         }
     }
 }

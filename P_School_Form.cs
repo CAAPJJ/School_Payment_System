@@ -16,7 +16,6 @@ namespace Online_Payment
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
         public string scid;
         loginform loginform = new loginform();
-
         public P_School_Form(loginform logfor)
         {
             InitializeComponent();
@@ -47,15 +46,16 @@ namespace Online_Payment
             search_school();
            
         }
-        public void RefreshData()
-        {
-            //SqlConnection conn = new SqlConnection(Conn);
-            //SqlCommand cmd = new SqlCommand("select *from Student", conn);
-            //SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            //DataTable dt = new DataTable();
-            //sda.Fill(dt);
-            //stugrv.DataSource = dt;
-        }
+
+        //public void RefreshData()
+        //{
+        //    //SqlConnection conn = new SqlConnection(Conn);
+        //    //SqlCommand cmd = new SqlCommand("select *from Student", conn);
+        //    //SqlDataAdapter sda = new SqlDataAdapter(cmd);
+        //    //DataTable dt = new DataTable();
+        //    //sda.Fill(dt);
+        //    //stugrv.DataSource = dt;
+        //}
         private void gvschoolsearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (gvschoolsearch.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)

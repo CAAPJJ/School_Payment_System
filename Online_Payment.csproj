@@ -193,6 +193,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Parent_Form.cs">
       <SubType>Form</SubType>
     </Compile>

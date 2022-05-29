@@ -15,7 +15,6 @@ namespace Online_Payment
     {
         string id;
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
-        //SqlConnection conn = new SqlConnection(Conn);
         loginform loginform = new loginform();
         public Payment(loginform logfor)
         {
@@ -35,26 +34,12 @@ namespace Online_Payment
             try
             {
                 conn.Open();
-                //string q1 = "";
                 conn.Close();
             }catch (Exception ex)
             {
 
             }
         }
-
-        //public void get_Id()
-        //{
-        //    SqlConnection conn = new SqlConnection(Conn);
-        //    loginform loginform = new loginform();
-        //    conn.Open();
-        //    SqlDataReader dr;
-        //    SqlCommand cmd = new SqlCommand("select Parent_Id from Parent Where User_Name ='"+loginform.Get_User_Name+"' and Password = '"+loginform.User_Password+"'", conn);
-        //    dr = cmd.ExecuteReader();
-        //    id = dr.GetValue(0).ToString();
-        //    MessageBox.Show(id);
-        //    conn.Close();
-        //}
 
         private void Payment_Load(object sender, EventArgs e)
         {
@@ -84,10 +69,6 @@ namespace Online_Payment
         
         public void changepanle()
         {
-            //choosen_school choosens = new choosen_school();
-            //((TextBox)choosens.Controls["textBox1"]).Text = "leul";
-            MessageBox.Show(scild);
-            MessageBox.Show(SCHOOL_NAME);
             Payment pform = new Payment(loginform);
             pnlPaymnet.Controls.Clear();
             choosen_school choosen = new choosen_school();
@@ -96,23 +77,21 @@ namespace Online_Payment
             pnlPaymnet.Controls.Add(choosen);
             choosen.Show();
         }
-        public string SCHOOL_NAME { get; private set; }
-        public string SCHOOL_ID { get; private set; }
-        public string scild;
+      
+        public string scid, scname;
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Global global = new Global();
             if (schlistgrview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 schlistgrview.CurrentRow.Selected = true;
-                SCHOOL_NAME = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
-                scild = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+                scname = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
+                scid = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+                global.SCHOOL_ID = scid;
             }
             changepanle();
         }
 
-        //public string getschoolId()
-        //{
-        //    return sclid;
-        //}
+       
     }
 }
