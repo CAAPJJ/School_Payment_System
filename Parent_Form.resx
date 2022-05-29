@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pnlnav.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 175</value>
+    <value>7, 157</value>
   </data>
   <data name="pnlnav.Size" type="System.Drawing.Size, System.Drawing">
-    <value>5, 57</value>
+    <value>5, 86</value>
   </data>
   <data name="pnlnav.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -236,7 +236,7 @@
     <value>NoControl</value>
   </data>
   <data name="logout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 647</value>
+    <value>0, 747</value>
   </data>
   <data name="logout.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 0, 0</value>
@@ -308,7 +308,7 @@
     <value>NoControl</value>
   </data>
   <data name="pays.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 394</value>
+    <value>0, 449</value>
   </data>
   <data name="pays.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 20, 0, 0</value>
@@ -317,7 +317,7 @@
     <value>10, 0, 20, 0</value>
   </data>
   <data name="pays.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 57</value>
+    <value>209, 86</value>
   </data>
   <data name="pays.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -391,7 +391,7 @@
     <value>NoControl</value>
   </data>
   <data name="settings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 467</value>
+    <value>0, 543</value>
   </data>
   <data name="settings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 20, 0, 0</value>
@@ -400,7 +400,7 @@
     <value>10, 0, 20, 0</value>
   </data>
   <data name="settings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 57</value>
+    <value>209, 86</value>
   </data>
   <data name="settings.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -455,7 +455,7 @@
     <value>NoControl</value>
   </data>
   <data name="dashboardd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 175</value>
+    <value>0, 157</value>
   </data>
   <data name="dashboardd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -464,7 +464,7 @@
     <value>10, 0, 0, 0</value>
   </data>
   <data name="dashboardd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 57</value>
+    <value>209, 86</value>
   </data>
   <data name="dashboardd.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -518,7 +518,7 @@
     <value>NoControl</value>
   </data>
   <data name="Profilee.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 248</value>
+    <value>0, 263</value>
   </data>
   <data name="Profilee.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 20, 0, 0</value>
@@ -527,7 +527,7 @@
     <value>10, 0, 20, 0</value>
   </data>
   <data name="Profilee.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 57</value>
+    <value>209, 86</value>
   </data>
   <data name="Profilee.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -597,7 +597,7 @@
     <value>NoControl</value>
   </data>
   <data name="Schooll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 321</value>
+    <value>0, 355</value>
   </data>
   <data name="Schooll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 20, 0, 0</value>
@@ -606,7 +606,7 @@
     <value>10, 0, 20, 0</value>
   </data>
   <data name="Schooll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 57</value>
+    <value>209, 86</value>
   </data>
   <data name="Schooll.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -636,7 +636,7 @@
     <value>0, 0</value>
   </data>
   <data name="navpanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 700</value>
+    <value>209, 800</value>
   </data>
   <data name="navpanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -652,6 +652,40 @@
   </data>
   <data name="&gt;&gt;navpanel.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="edit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAARlJREFUaEPt
+        mF8KwjAMh3snBT2I4Dk8wP7c0XMoe3ObD5rYFmqa1hdZUsgHv4c1GXxpKcqcYRiK6OeL65c75OrGdR9W
+        G6FfRsgryQRDHENVObl8Q0OU5WMUD8HLz8za5Lr1EN5SAi/vRUs1NRe7Jh/he66hKggvhhlCh8efxIP0
+        3EJViLI85gk5f/q8/JTUQuB3Qoy6fAwOMUAYeXhfDF4eJVEWpWmNRqF8vLDjcoLn2hDfd2NTfslH/EnQ
+        PozinY906w7W8Q8c7W1g503+35i8FCYvhclLYfJSmLwUJi+FyUuSCzUkj1CpXL7w6QNOTgVULEX1zkeo
+        XKQJeSQXrEWZPMKLclEoj/CyNErlEV44jWJ5wzCMbXDuDfq2X8j10I9YAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="edit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 104</value>
+  </data>
+  <data name="edit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 21</value>
+  </data>
+  <data name="edit.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="edit.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;edit.Name" xml:space="preserve">
+    <value>edit</value>
+  </data>
+  <data name="&gt;&gt;edit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;edit.Parent" xml:space="preserve">
+    <value>userpicpnl</value>
+  </data>
+  <data name="&gt;&gt;edit.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="urname.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -745,7 +779,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1097, 700</value>
+    <value>1097, 800</value>
   </data>
   <data name="winmax.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -927,7 +961,7 @@
     <value>209, 0</value>
   </data>
   <data name="mainpanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 700</value>
+    <value>888, 800</value>
   </data>
   <data name="mainpanel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -973,40 +1007,5 @@
   </data>
   <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="edit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAEZSURBVGhD7ZhfCsIwDId7JwU9iOA5PMD+3NFzKHtzmw+a2BZqmtYXWVLIB7+HNRl8aSnKnGEY
-        iujni+uXO+TqxnUfVhuhX0bIK8kEQxxDVTm5fENDlOVjFA/By8/M2uS69RDeUgIv70VLNTUXuyYf4Xuu
-        oSoIL4YZQofHn8SD9NxCVYiyPOYJOX/6vPyU1ELgd0KMunwMDjFAGHl4XwxeHiVRFqVpjUahfLyw43KC
-        59oQ33djU37JR/xJ0D6M4p2PdOsO1vEPHO1tYOdN/t+YvBQmL4XJS2HyUpi8FCYvhclLkgs1JI9QqVy+
-        8OkDTk4FVCxF9c5HqFykCXkkF6xFmTzCi3JRKI/wsjRK5RFeOI1iecMwjG1w7g36tl/I9dCPWAAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="edit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 104</value>
-  </data>
-  <data name="edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 21</value>
-  </data>
-  <data name="edit.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="edit.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;edit.Name" xml:space="preserve">
-    <value>edit</value>
-  </data>
-  <data name="&gt;&gt;edit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;edit.Parent" xml:space="preserve">
-    <value>userpicpnl</value>
-  </data>
-  <data name="&gt;&gt;edit.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
 </root>

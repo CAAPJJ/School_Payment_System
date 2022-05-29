@@ -14,12 +14,12 @@ namespace Online_Payment
     public partial class choosen_school : Form
     {
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
-        private static loginform loginform = new loginform();
-        public Payment pforms = new Payment(loginform);
-        public choosen_school()
+       loginform loginform = new loginform();
+        private static Global global = new Global();
+        public choosen_school(loginform logfor)
         {
               InitializeComponent();
-              // this.pforms = pform;
+              this.loginform = logfor;
         }
 
         private void Label6_Click(object sender, EventArgs e)
@@ -30,9 +30,9 @@ namespace Online_Payment
         }
         private void Choosen_school_Load(object sender, EventArgs e)
         {
-            Global global = new Global();
             MessageBox.Show(global.SCHOOL_ID,"remove hope");
-            lbChoosenSchool.Text = loginform.getpid().ToString();
+            MessageBox.Show(global.SCHOOL_NAME, "name hope");
+            lbChoosenSchool.Text = global.SCHOOL_NAME;
             student_list();
         }
 
@@ -43,7 +43,7 @@ namespace Online_Payment
         public void changepanle()
         {
             
-            //MessageBox.Show(pforms.SCHOOL_ID,"School ID");
+            MessageBox.Show(global.SCHOOL_ID,"School ID");
             //MessageBox.Show(pforms.SCHOOL_NAME, "School NAME");
 
             //pnlliststudent.Controls.Clear();
@@ -64,7 +64,7 @@ namespace Online_Payment
             int pid = loginform.getpid();
             //string scid = pforms.SCHOOL_ID;
             string query = "select First_Name,Last_Name,Student_Id from Student s where s.Student_Id in " +
-                            "(select Student_Id from Parent_cloud p where Parent_Id = " + pid + " and p.School_Id =" +1+")";
+                            "(select Student_Id from Parent_cloud p where Parent_Id = " + pid + " and p.School_Id =" +global.SCHOOL_ID+")";
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
             try

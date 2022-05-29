@@ -16,10 +16,12 @@ namespace Online_Payment
         string id;
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
         loginform loginform = new loginform();
-        public Payment(loginform logfor)
+        Global global = new Global();
+        public Payment(loginform logfor,Global glob)
         {
             InitializeComponent();
             this.loginform = logfor;
+            this.global = glob;
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -69,9 +71,9 @@ namespace Online_Payment
         
         public void changepanle()
         {
-            Payment pform = new Payment(loginform);
+            Payment pform = new Payment(loginform,global);
             pnlPaymnet.Controls.Clear();
-            choosen_school choosen = new choosen_school();
+            choosen_school choosen = new choosen_school(loginform);
             choosen.TopLevel = false;
             pnlPaymnet.Controls.Clear();
             pnlPaymnet.Controls.Add(choosen);
@@ -88,10 +90,14 @@ namespace Online_Payment
                 scname = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
                 scid = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
                 global.SCHOOL_ID = scid;
+                global.SCHOOL_NAME = scname;
             }
             changepanle();
         }
-
+        //public void getid()
+        //{
+        //    MessageBox.Show(global.SCHOOL_ID, "when change get id");
+        //}
        
     }
 }

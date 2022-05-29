@@ -8,14 +8,20 @@ namespace Online_Payment
 {
   public class Global
     {
-      private string Name = "Leul";
-        private string id = "0";
+      private static string School_Name;
+        private static string id;
        
         public string SCHOOL_ID
         {
-            set { this.id = value;}
+            set { id = value;}
             get { return id; }
         }
-        
+
+        public string SCHOOL_NAME
+        {
+            set { School_Name = value; }
+            get { return School_Name; }
+        }
+
     }
 }

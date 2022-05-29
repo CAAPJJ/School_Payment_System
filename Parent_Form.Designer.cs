@@ -33,6 +33,7 @@
             this.navpanel = new System.Windows.Forms.Panel();
             this.pnlnav = new System.Windows.Forms.Panel();
             this.userpicpnl = new System.Windows.Forms.Panel();
+            this.edit = new System.Windows.Forms.PictureBox();
             this.urname = new System.Windows.Forms.Label();
             this.userpic = new System.Windows.Forms.PictureBox();
             this.logout = new System.Windows.Forms.Button();
@@ -49,16 +50,15 @@
             this.winmax = new System.Windows.Forms.PictureBox();
             this.minimize = new System.Windows.Forms.PictureBox();
             this.winclose = new System.Windows.Forms.PictureBox();
-            this.edit = new System.Windows.Forms.PictureBox();
             this.navpanel.SuspendLayout();
             this.userpicpnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.titlebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.winmax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winclose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edit)).BeginInit();
             this.SuspendLayout();
             // 
             // navpanel
@@ -74,7 +74,6 @@
             this.navpanel.Controls.Add(this.Profilee);
             this.navpanel.Controls.Add(this.Schooll);
             this.navpanel.Name = "navpanel";
-            this.navpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Navpanel_Paint);
             // 
             // pnlnav
             // 
@@ -89,6 +88,13 @@
             this.userpicpnl.Controls.Add(this.userpic);
             resources.ApplyResources(this.userpicpnl, "userpicpnl");
             this.userpicpnl.Name = "userpicpnl";
+            // 
+            // edit
+            // 
+            resources.ApplyResources(this.edit, "edit");
+            this.edit.Name = "edit";
+            this.edit.TabStop = false;
+            this.edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // urname
             // 
@@ -181,7 +187,6 @@
             this.mainpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             resources.ApplyResources(this.mainpanel, "mainpanel");
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Mainpanel_Paint);
             // 
             // titlebar
             // 
@@ -207,6 +212,8 @@
             this.minimize.Name = "minimize";
             this.minimize.TabStop = false;
             this.minimize.Click += new System.EventHandler(this.PictureBox1_Click);
+            this.minimize.MouseLeave += new System.EventHandler(this.Minimize_MouseLeave);
+            this.minimize.MouseHover += new System.EventHandler(this.Minimize_MouseHover);
             // 
             // winclose
             // 
@@ -214,13 +221,8 @@
             this.winclose.Name = "winclose";
             this.winclose.TabStop = false;
             this.winclose.Click += new System.EventHandler(this.Winclose_Click);
-            // 
-            // edit
-            // 
-            resources.ApplyResources(this.edit, "edit");
-            this.edit.Name = "edit";
-            this.edit.TabStop = false;
-            this.edit.Click += new System.EventHandler(this.Edit_Click);
+            this.winclose.MouseLeave += new System.EventHandler(this.Winclose_MouseLeave);
+            this.winclose.MouseHover += new System.EventHandler(this.Winclose_MouseHover);
             // 
             // Parent_Form
             // 
@@ -239,6 +241,7 @@
             this.navpanel.ResumeLayout(false);
             this.userpicpnl.ResumeLayout(false);
             this.userpicpnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.titlebar.ResumeLayout(false);
@@ -246,7 +249,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.winmax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winclose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edit)).EndInit();
             this.ResumeLayout(false);
 
         }

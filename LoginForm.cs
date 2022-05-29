@@ -82,7 +82,6 @@ namespace Online_Payment
         public String Get_User_Name
         {
             get { return usersname.Text.ToString(); }
-
         }
         public String User_Password
         {

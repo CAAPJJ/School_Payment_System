@@ -56,18 +56,6 @@ namespace Online_Payment
         //    //sda.Fill(dt);
         //    //stugrv.DataSource = dt;
         //}
-        private void gvschoolsearch_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (gvschoolsearch.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            {
-                gvschoolsearch.CurrentRow.Selected = true;
-                school_name.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
-                address.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Adress"].FormattedValue.ToString();
-                schemail.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Email"].FormattedValue.ToString();
-                phonenum.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
-                scid = gvschoolsearch.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
-            }
-        }
         public void school_add()
         {
             string addtocloud = "execute add_cloud  @pid,@sid,@stuid";
@@ -192,6 +180,20 @@ namespace Online_Payment
         private void PnlP_School_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Gvschoolsearch_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (gvschoolsearch.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                gvschoolsearch.CurrentRow.Selected = true;
+                school_name.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
+                address.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Adress"].FormattedValue.ToString();
+                schemail.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Email"].FormattedValue.ToString();
+                phonenum.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
+                scid = gvschoolsearch.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+            }
+            
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Online_Payment
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
         private Button currbtn;
         loginform loginform = new loginform();
+        Global global = new Global();
         public Parent_Form(loginform logfor)
         {
             InitializeComponent();
@@ -84,7 +85,7 @@ namespace Online_Payment
             //ShowThisForm(new Payment());
             labels();
             lbltop.Text = "Payment";
-            Payment payment = new Payment(loginform);
+            Payment payment = new Payment(loginform,global);
             payment.TopLevel = false;
             mainpanel.Controls.Clear();
             mainpanel.Controls.Add(payment);
@@ -106,16 +107,6 @@ namespace Online_Payment
             this.Hide();
         }
         private void Urname_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Mainpanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Navpanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -171,15 +162,15 @@ namespace Online_Payment
 
         private void PictureBox1_Click_1(object sender, EventArgs e)
         {
-                 if(WindowState == FormWindowState.Normal)
-       {
-           WindowState = FormWindowState.Maximized;
+       //          if(WindowState == FormWindowState.Normal)
+       //{
+       //    WindowState = FormWindowState.Maximized;
 
-       }
-       else
-       {
-           WindowState = FormWindowState.Normal;
-       }
+       //}
+       //else
+       //{
+       //    WindowState = FormWindowState.Normal;
+       //}
 
         }
 
@@ -196,6 +187,26 @@ namespace Online_Payment
         private void Edit_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Minimize_MouseHover(object sender, EventArgs e)
+        {
+            minimize.BackColor = Color.LightGray;
+        }
+
+        private void Winclose_MouseHover(object sender, EventArgs e)
+        {
+            winclose.BackColor = Color.LightGray;
+        }
+
+        private void Minimize_MouseLeave(object sender, EventArgs e)
+        {
+            minimize.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void Winclose_MouseLeave(object sender, EventArgs e)
+        {
+            winclose.BackColor = Color.FromArgb(24, 30, 54);
         }
     }
 }
