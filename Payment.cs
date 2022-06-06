@@ -13,7 +13,6 @@ namespace Online_Payment
 {
     public partial class Payment : Form
     {
-        string id;
         public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
         loginform loginform = new loginform();
         Global global = new Global();
@@ -97,25 +96,62 @@ namespace Online_Payment
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Global global = new Global();
-            if (schlistgrview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
-                schlistgrview.CurrentRow.Selected = true;
-                scname = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
-                scid = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
-                global.SCHOOL_ID = scid;
-                global.SCHOOL_NAME = scname;
+                if (schlistgrview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    schlistgrview.CurrentRow.Selected = true;
+                    scname = schlistgrview.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
+                    scid = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+                    global.SCHOOL_ID = scid;
+                    global.SCHOOL_NAME = scname;
+                }
+                changepanle();
             }
-            changepanle();
+            catch
+            {
+
+            }
         }
+        public void deleteSchool()
+        {
+            string deleterecord = "delete from Parent_Cloud where Parent_Id =" + loginform.getpid() + " and School_Id = " + global.SCHOOL_ID;
+            SqlConnection conn = new SqlConnection(Conn);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(deleterecord, conn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Delete Successfully");
+            conn.Close();
+            School_List();
+        }
+        private void Schlistgrview_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                    if(schlistgrview.Columns[e.ColumnIndex].Name == "delete")
+                {
+                    if(MessageBox.Show("Are you sure want to delete this School?\nThis Will Delete All Student you Added Before", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        
+                    {
+                         global.SCHOOL_ID = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+                            deleteSchool();
+                    }
+                }
+            }catch
+            {
+
+            }
+        }
+
         public void addemtptyrow(int i)
         {
-            for (i = 0; i <10; i++)
-            {
-                DataTable dt = schlistgrview.DataSource as DataTable;
-                DataRow dr = dt.NewRow();
-                dt.Rows.Add(dr);
-                schlistgrview.DataSource = dt;
-            }
+            //for (i = 0; i <10; i++)
+            //{
+            //    DataTable dt = schlistgrview.DataSource as DataTable;
+            //    DataRow dr = dt.NewRow();
+            //    dt.Rows.Add(dr);
+            //    schlistgrview.DataSource = dt;
+            //}
         }
     }
 }

@@ -33,6 +33,7 @@ namespace Online_Payment
             cmd.Parameters.AddWithValue("@userpassword", User_Password);
             id = Convert.ToInt32(cmd.ExecuteScalar());
             conn.Close();
+            
             return id;
         }
 
@@ -58,7 +59,9 @@ namespace Online_Payment
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
             account = Convert.ToInt32(cmd.ExecuteScalar());
+            global.GET_PARENT_ACCOUNT = account.ToString();
             return account;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -104,7 +107,6 @@ namespace Online_Payment
                     break;
             }
             return choose;
-
         }
         private void logus_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -165,7 +167,6 @@ namespace Online_Payment
                         if (i >= 3)
                         {
                             forgpass.Visible = true;
-                            //MessageBox.Show("Invalid User Name or password");
                         }
                     }
                 }
@@ -218,36 +219,12 @@ namespace Online_Payment
             if (showpassword.Checked)
             {
                 password.UseSystemPasswordChar = false;
-
             }
             else
             {
                 password.UseSystemPasswordChar = true;
-
             }
         }
-
-
-        private void username(object sender, MouseEventArgs e)
-        {
-            if (usersname.Text == "Enter UserName")
-            {
-                usersname.Text = "";
-                usersname.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void username(object sender, EventArgs e)
-        {
-            if (usersname.Text == "")
-            {
-                usersname.Text = "Enter UserName";
-                usersname.ForeColor = Color.Red;
-
-            }
-        }
-
         private void logus(object sender, EventArgs e)
         {
 
@@ -263,7 +240,6 @@ namespace Online_Payment
             if (e.KeyCode == Keys.Enter)
             {
                 login();
-
             }
         }
 
@@ -315,6 +291,11 @@ namespace Online_Payment
             {
                 password.Focus();
             }
+        }
+
+        private void Usersname_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,13 +37,13 @@ namespace Online_Payment
         }
       public void addemtptyrow(int i)
         {
-            for(i = 0; i<10; i++)
-            {
-                DataTable dt = stulistgrview.DataSource as DataTable;
-                DataRow dr = dt.NewRow();
-                dt.Rows.Add(dr);
-                stulistgrview.DataSource = dt;
-            }
+            //for(i = 0; i<10; i++)
+            //{
+            //    DataTable dt = stulistgrview.DataSource as DataTable;
+            //    DataRow dr = dt.NewRow();
+            //    dt.Rows.Add(dr);
+            //    stulistgrview.DataSource = dt;
+            //}
         }
      
         private void Stulistgrview_DoubleClick(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace Online_Payment
         public void changepanle()
         {
             pnlliststudent.Controls.Clear();
-            Pay_Now paynow = new Pay_Now();
+            Pay_Now paynow = new Pay_Now(loginform);
             paynow.TopLevel = false;
             pnlliststudent.Controls.Clear();
             pnlliststudent.Controls.Add(paynow);
@@ -98,13 +98,51 @@ namespace Online_Payment
 
         private void LbChoosenSchool_Click(object sender, EventArgs e)
         {
-            changepanle();
+            
         }
         public string stufname,stulname,stuid;
 
         private void Stulistgrview_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells["Payes"].Value = "Not payed";
+        }
+        public void delteStudent()
+        {
+            string deleterecord = "delete from Parent_Cloud where Parent_Id =" + loginform.getpid() + " and Student_Id = " + global.STUDENT_ID + " and School_Id = " + global.SCHOOL_ID;
+            SqlConnection conn = new SqlConnection(Conn);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(deleterecord, conn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Delete Successfully","Message", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            conn.Close();
+            student_list();
+        }
+        private void Stulistgrview_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                stuid = stulistgrview.Rows[e.RowIndex].Cells["Student_Id"].FormattedValue.ToString();
+                global.STUDENT_ID = stuid;
+                if (stulistgrview.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    if (MessageBox.Show("Are you sure want to delete this Student?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+
+                    {
+                        delteStudent();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delte Cancceled");
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+
+
         }
 
         private void Stulistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -118,6 +156,20 @@ namespace Online_Payment
             global.STUDENT_LNAME = stulname;
             changepanle();
         }
+
+        private void Stulistgrview_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                pnlliststudent.Controls.Clear();
+                Pay_Now paynow = new Pay_Now(loginform);
+                paynow.TopLevel = false;
+                pnlliststudent.Controls.Clear();
+                pnlliststudent.Controls.Add(paynow);
+                paynow.Show();
+            }
+        }
+
         public void checkifpay()
         {
             string query = "SELECT CAST(CASE WHEN COUNT(*) > 0 THEN 1 ELSE 0 END AS BIT)FROM Pay WHERE Parent_Id = 100;";

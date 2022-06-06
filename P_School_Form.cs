@@ -44,7 +44,6 @@ namespace Online_Payment
         private void Serch_Click(object sender, EventArgs e)
         {
             search_school();
-           
         }
 
         //public void RefreshData()
@@ -79,7 +78,6 @@ namespace Online_Payment
             }
             conn.Close();
             School_List();
-            
         }
         public void addemtptyrow(int i)
         {
@@ -91,22 +89,10 @@ namespace Online_Payment
                 schlistgrview.DataSource = dt;
             }
         }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            bool checkes  = checkifexist();
-            if (checkes)
-            {
-                school_add();
-            }
-            else
-            {
-                MessageBox.Show("unavailable Student Id");
-            }
-        }
         public bool checkifexist()
         {
             string query = "select count(*) from Student where Student_Id = "+ stuid.Text.ToString() + " and School_Id = "+ global.SCHOOL_ID;
-            MessageBox.Show(global.STUDENT_ID);
+           // MessageBox.Show(global.STUDENT_ID);
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -158,19 +144,9 @@ namespace Online_Payment
         {
 
         }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            school_name.Clear();
-            address.Clear();
-            schemail.Clear();
-            phonenum.Clear();
-        }
-
         private void P_School_Form_Load(object sender, EventArgs e)
         {
             School_List();
-            
         }
 
         private void Search_KeyDown(object sender, KeyEventArgs e)
@@ -196,18 +172,43 @@ namespace Online_Payment
 
         private void Gvschoolsearch_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (gvschoolsearch.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
-                gvschoolsearch.CurrentRow.Selected = true;
-                school_name.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
-                address.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Adress"].FormattedValue.ToString();
-                schemail.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Email"].FormattedValue.ToString();
-                phonenum.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
-                global.SCHOOL_ID = gvschoolsearch.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+                if (gvschoolsearch.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    gvschoolsearch.CurrentRow.Selected = true;
+                    school_name.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Name"].FormattedValue.ToString();
+                    address.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Adress"].FormattedValue.ToString();
+                    schemail.Text = gvschoolsearch.Rows[e.RowIndex].Cells["School_Email"].FormattedValue.ToString();
+                    phonenum.Text = gvschoolsearch.Rows[e.RowIndex].Cells["Phone_number"].FormattedValue.ToString();
+                    global.SCHOOL_ID = gvschoolsearch.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
+                }
+            }
+            catch
+            {
+
             }
             
         }
 
- 
+        private void Add_School_Click(object sender, EventArgs e)
+        {
+            bool checkes = checkifexist();
+            if (checkes)
+            {
+                school_add();
+            }
+            else { 
+                     MessageBox.Show("unavailable Student Id","Message",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+            }
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            school_name.Clear();
+            address.Clear();
+            schemail.Clear();
+            phonenum.Clear();
+        }
     }
 }

@@ -80,15 +80,14 @@
             // 
             // usersname
             // 
-            this.usersname.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.usersname.ForeColor = System.Drawing.Color.Black;
             this.usersname.Location = new System.Drawing.Point(348, 150);
             this.usersname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usersname.Name = "usersname";
             this.usersname.Size = new System.Drawing.Size(183, 22);
             this.usersname.TabIndex = 4;
-            this.usersname.MouseClick += new System.Windows.Forms.MouseEventHandler(this.username);
+            this.usersname.TextChanged += new System.EventHandler(this.Usersname_TextChanged);
             this.usersname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Usersname_KeyDown);
-            this.usersname.MouseLeave += new System.EventHandler(this.username);
             // 
             // password
             // 
@@ -100,7 +99,6 @@
             this.password.TabIndex = 5;
             this.password.UseSystemPasswordChar = true;
             this.password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Password_KeyDown);
-            this.password.MouseCaptureChanged += new System.EventHandler(this.username);
             // 
             // usrname
             // 
@@ -137,7 +135,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(303, 23);
+            this.label2.Location = new System.Drawing.Point(236, 31);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(324, 54);
@@ -162,7 +160,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(139, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(73, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(130, 119);
@@ -211,7 +209,7 @@
             this.logas.Name = "logas";
             this.logas.Size = new System.Drawing.Size(183, 24);
             this.logas.TabIndex = 13;
-            this.logas.Text = "Student";
+            this.logas.Text = "Parent";
             this.logas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Logas_KeyDown);
             // 
             // showpassword

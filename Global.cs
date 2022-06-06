@@ -9,7 +9,7 @@ namespace Online_Payment
   public class Global
     {
       private static string School_Name,fname,lname;
-        private static string id,stuid;
+        private static string id,stuid,pacc;
        
         public string SCHOOL_ID
         {
@@ -21,7 +21,6 @@ namespace Online_Payment
             set { stuid = value; }
             get { return stuid; }
         }
-
         public string SCHOOL_NAME
         {
             set { School_Name = value; }
@@ -36,6 +35,12 @@ namespace Online_Payment
         {
             set { lname = value; }
             get { return lname; }
+        }
+
+        public string GET_PARENT_ACCOUNT
+        {
+            set { pacc = value; }
+            get { return pacc; }
         }
 
     }
