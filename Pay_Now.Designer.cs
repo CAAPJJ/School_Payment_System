@@ -168,9 +168,9 @@
             this.thismonpena.ForeColor = System.Drawing.Color.White;
             this.thismonpena.Location = new System.Drawing.Point(641, 269);
             this.thismonpena.Name = "thismonpena";
-            this.thismonpena.Size = new System.Drawing.Size(132, 23);
+            this.thismonpena.Size = new System.Drawing.Size(21, 23);
             this.thismonpena.TabIndex = 96;
-            this.thismonpena.Text = "Student Name";
+            this.thismonpena.Text = "0";
             // 
             // label1
             // 
@@ -373,6 +373,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pay_Now";
             this.Load += new System.EventHandler(this.Pay_Now_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Pay_Now_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -37,7 +37,7 @@ namespace Online_Payment
                 MessageBox.Show("Date");
                 isdate = true;
             }
-            else if (date == 1 || date == 2 || date == 3 || date == 6)
+            else if (date == 1 || date == 2 || date == 3 || date == 4)
             {
                 isdate = true;
                 ispenality = true;
@@ -52,6 +52,7 @@ namespace Online_Payment
         public string getdate()
         {
             string getd = "Select MAX(PId) as pid from Pay where Student_Id = "+global.STUDENT_ID;
+            string getregdate = "Select Register_Date from Student where Student_Id = " + global.STUDENT_ID;
             string paydate = null;
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
@@ -65,7 +66,17 @@ namespace Online_Payment
             }
             catch
             {
-                MessageBox.Show("No Payment History");
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(getd, conn);
+                    payid = cmd.ExecuteScalar().ToString();
+                    SqlCommand cmd2 = new SqlCommand(getregdate, conn);
+                    paydate = cmd2.ExecuteScalar().ToString();
+                }
+                catch(SqlException ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(),"Message");
+                }
             }
             conn.Close();
             return paydate;
@@ -88,16 +99,12 @@ namespace Online_Payment
             }
             catch
             {
-                MessageBox.Show("Fee is not set For this Class");
+                MessageBox.Show("Fee is not set For this Class","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             conn.Close();
             return amount;
         }
-            
-            
-            
-               
-
+        
         public static float penalityfee,monthfee,fee;
         public void CalculateFee()
         {
@@ -108,7 +115,6 @@ namespace Online_Payment
             DateTime Mydate = Convert.ToDateTime(getdates);
             DateTime dateTime = DateTime.Now;
             TimeSpan time = dateTime.Subtract(Mydate);
-      
             if (isdate)
             { 
                 if (ispenality)
@@ -129,7 +135,7 @@ namespace Online_Payment
             }
             else
             {
-                MessageBox.Show("You cant Pay Today!!!", "Message");
+                MessageBox.Show("You cant Pay Today!!!", "Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
             } 
         }
         public int getschacc()
@@ -145,29 +151,54 @@ namespace Online_Payment
         private void Pay_Click(object sender, EventArgs e)
         {
             string paynow = "execute Payment @sender,@reciver,@Stu_Id,@amount";
-            int j = loginform.getPacc();
-            try
-            {
-                SqlConnection conn = new SqlConnection(Conn);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(paynow, conn);
-                cmd.Parameters.AddWithValue("@sender", loginform.getPacc());
-                cmd.Parameters.AddWithValue("@reciver", getschacc().ToString());
-                cmd.Parameters.AddWithValue("@Stu_Id", global.STUDENT_ID);
-                CalculateFee();
-                cmd.Parameters.AddWithValue("@amount", fee);
-                MessageBox.Show("payment Succssfully");
-                cmd.ExecuteNonQuery();
-                conn.Close();
-
-            }
-            catch(SqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            
             CalculateFee();
-            
+           if(fee > 0 && fee !=0)
+            {
+                try
+                {
+                    SqlConnection conn = new SqlConnection(Conn);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(paynow, conn);
+                    cmd.Parameters.AddWithValue("@sender", loginform.getPacc());
+                    cmd.Parameters.AddWithValue("@reciver", getschacc().ToString());
+                    cmd.Parameters.AddWithValue("@Stu_Id", global.STUDENT_ID);
+                    CalculateFee();
+                    cmd.Parameters.AddWithValue("@amount", fee);
+                    MessageBox.Show("payment Succssfully");
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("You already Pay For This Student","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+
+        private void Pay_Now_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Back)
+            //{
+            //    pnlliststudent.Controls.Clear();
+            //    Pay_Now paynow = new Pay_Now(loginform);
+            //    paynow.TopLevel = false;
+            //    pnlliststudent.Controls.Clear();
+            //    pnlliststudent.Controls.Add(paynow);
+            //    paynow.Show();
+
+            //}
+            //else if (e.KeyCode == Keys.Down)
+            //{
+            //    usersname.Focus();
+            //}
+            //else if (e.KeyCode == Keys.Up)
+            //{
+            //    password.Focus();
+            //}
         }
 
         private void Label13_Click(object sender, EventArgs e)
@@ -179,13 +210,23 @@ namespace Online_Payment
         {
             CalculateFee();
             fees.Text = getfee().ToString();
-            if (ispenality)
+            if (checkDate())
             {
-                pena.Text = "Penality";
-                pena.ForeColor = Color.Red;
+                if (ispenality)
+                {
+                    pena.Text = "Penality";
+                    pena.ForeColor = Color.Red;
+                }
+                else
+                {
+                    pena.Text = "None";
+                    pena.ForeColor = Color.Green;
+                }
             }
             else
             {
+                pay.Enabled = false;
+                pay.BackColor = Color.White;
                 pena.Text = "None";
                 pena.ForeColor = Color.Green;
             }
@@ -193,8 +234,6 @@ namespace Online_Payment
             ttlpenality.Text = penalityfee.ToString();
             unpmonth.Text = monthfee.ToString();
             totalFee.Text = fee.ToString();
-           
-
             stufname.Text = global.STUDENT_FNAME;
             stulname.Text = global.STUDENT_LNAME;
             stuid.Text = global.STUDENT_ID;

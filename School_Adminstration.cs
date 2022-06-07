@@ -38,9 +38,9 @@ namespace Online_Payment
         //    SqlCommand cmd = new SqlCommand(query, conn);
         //    cmd.Parameters.AddWithValue("@username", loginform.Get_User_Name);
         //    cmd.Parameters.AddWithValue("@userpassword", loginform.User_Password);
-        //   id =Convert.ToInt32(cmd.ExecuteScalar());
+        //    id = Convert.ToInt32(cmd.ExecuteScalar());
         //    conn.Close();
-        //   return id;
+        //    return id;
         //}
         private void lablename()
         {
@@ -83,12 +83,6 @@ namespace Online_Payment
         int key = 0;
         private void StuListGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ////DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            ////btn.HeaderText = "Delete";
-            ////btn.Text = "delete";
-            ////btn.Name = "del";
-            ////btn.UseColumnTextForButtonValue = true;
-            //StuListGv.Columns.Add(btn);
             Stufname.Text = StuListGv.SelectedRows[0].Cells[1].Value.ToString();
             stulname.Text = StuListGv.SelectedRows[0].Cells[2].Value.ToString();
             stuage.Text = StuListGv.SelectedRows[0].Cells[3].Value.ToString();
@@ -106,67 +100,74 @@ namespace Online_Payment
             {
                 key = Convert.ToInt32(StuListGv.SelectedRows[0].Cells[0].Value.ToString());
             }
-
         }
 
+        bool checkes;
+        public bool ifexist()
+        {
+            string query = "Select * from fee where School_Id = "+ loginform.getsid() + " and Class = "+currclass.Text.ToString();
+            SqlConnection conn = new SqlConnection(Conn);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            object trying = cmd.ExecuteScalar();
+           // MessageBox.Show(trying.ToString(), "what's this return");
+                if(trying != null)
+            {
+                checkes = true;
+            }
+            else
+            {
+                checkes = false;
+            }
+            return checkes;
+        }
         private void add_student_Click(object sender, EventArgs e)
             
         {
-            try
+         
+            if (ifexist())
             {
-
+                int get_id = loginform.getsid();
                 byte[] Imagebt = null;
-                FileStream fstream = new FileStream(this.picspath.Text, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(fstream);
-                Imagebt = br.ReadBytes((int)fstream.Length);
-                if(Imagebt == null)
-                {
-                    MessageBox.Show("Student Image is Required", "Information");
-                }
-                try
+                    try
+                    {
+                        FileStream fstream = new FileStream(this.picspath.Text, FileMode.Open, FileAccess.Read);
+                        BinaryReader br = new BinaryReader(fstream);
+                        Imagebt = br.ReadBytes((int)fstream.Length);
+                        SqlConnection conn = new SqlConnection(Conn);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("execute Student_info @schuid,@First,@Last,@sex,@age,@users," +
+                            "@password,@email,@address,@phone,@Class,@Image", conn);
+                        cmd.Parameters.AddWithValue("@schuid", get_id);
+                        cmd.Parameters.AddWithValue("@First", Stufname.Text.ToString());
+                        cmd.Parameters.AddWithValue("@Last", stulname.Text.ToString());
+                        cmd.Parameters.AddWithValue("@sex", Gender);
+                        cmd.Parameters.AddWithValue("@age", stuage.Text.ToString());
+                        cmd.Parameters.AddWithValue("@users", stuusername.Text.ToString());
+                        cmd.Parameters.AddWithValue("@password", "123456");
+                        cmd.Parameters.AddWithValue("@email", stuemail.Text.ToString());
+                        cmd.Parameters.AddWithValue("@address", address.Text.ToString());
+                        cmd.Parameters.AddWithValue("@phone", stuponenum.Text.ToString());
+                        cmd.Parameters.AddWithValue("@Class", currclass.Text.ToString());
+                        cmd.Parameters.Add(new SqlParameter("@Image", Imagebt));
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Student " + Stufname.Text + " Registerde");
+                        conn.Close();
 
-                {
-                    int get_id = loginform.getsid();
-
-                    SqlConnection conn = new SqlConnection(Conn);
-                    conn.Open();
-                    //string id = "";
-                    SqlCommand cmd = new SqlCommand("execute Student_info @schuid,@First,@Last,@sex,@age,@users," +
-                        "@password,@email,@address,@phone,@Class,@Image",conn);
-                    cmd.Parameters.AddWithValue("@schuid", get_id);
-                    cmd.Parameters.AddWithValue("@First", Stufname.Text.ToString());
-                    cmd.Parameters.AddWithValue("@Last", stulname.Text.ToString());
-                    cmd.Parameters.AddWithValue("@sex", Gender);
-                    cmd.Parameters.AddWithValue("@age", stuage.Text.ToString());
-                    cmd.Parameters.AddWithValue("@users", stuusername.Text.ToString());
-                    cmd.Parameters.AddWithValue("@password", "123456");
-                    cmd.Parameters.AddWithValue("@email", stuemail.Text.ToString());
-                    cmd.Parameters.AddWithValue("@address", address.Text.ToString());
-                    cmd.Parameters.AddWithValue("@phone", stuponenum.Text.ToString());
-                    cmd.Parameters.AddWithValue("@Class", currclass.Text.ToString());
-                    cmd.Parameters.Add(new SqlParameter("@Image", Imagebt));
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Student " + Stufname.Text + " Registerde");
-                    conn.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        if (ex.Number == 2627)
+                        {
+                            MessageBox.Show("Username or email address are already registerd");
+                        }
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    MessageBox.Show(ex.StackTrace);
-                    MessageBox.Show(ex.ToString());
-                }
-            }catch (SqlException ex)
+            else
             {
-                if(ex.Number == 2627)
-                {
-                    MessageBox.Show("Username or email address are already registerd");
-                }
-                else
-                {
-                    MessageBox.Show(ex.Message);
-                    MessageBox.Show(ex.StackTrace);
-                }
+                MessageBox.Show("School Fee Is not set For This Class " + currclass.Text, "Information");
             }
+                
         }
 
         private void Male_CheckedChanged(object sender, EventArgs e)

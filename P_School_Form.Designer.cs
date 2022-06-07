@@ -122,7 +122,6 @@
             this.pnlP_School.Name = "pnlP_School";
             this.pnlP_School.Size = new System.Drawing.Size(888, 800);
             this.pnlP_School.TabIndex = 67;
-            this.pnlP_School.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlP_School_Paint);
             // 
             // label7
             // 
@@ -251,6 +250,7 @@
             this.stuid.Name = "stuid";
             this.stuid.Size = new System.Drawing.Size(277, 22);
             this.stuid.TabIndex = 77;
+            this.stuid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Stuid_KeyDown_1);
             // 
             // address
             // 

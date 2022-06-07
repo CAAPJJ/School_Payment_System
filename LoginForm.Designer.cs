@@ -80,6 +80,8 @@
             // 
             // usersname
             // 
+            this.usersname.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.usersname.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.usersname.ForeColor = System.Drawing.Color.Black;
             this.usersname.Location = new System.Drawing.Point(348, 150);
             this.usersname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

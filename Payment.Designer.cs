@@ -109,6 +109,7 @@
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
             this.delete.Text = "Delete";
+            this.delete.UseColumnTextForButtonValue = true;
             this.delete.Width = 80;
             // 
             // Payment

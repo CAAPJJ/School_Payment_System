@@ -70,7 +70,7 @@ namespace Online_Payment
                 DataTable table = new DataTable();
                 adabter.Fill(table);
                 gvschoolsearch.DataSource = table;
-                MessageBox.Show("School Add Successfully");
+                MessageBox.Show("School Add Successfully","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (SqlException ex)
             {
@@ -165,11 +165,6 @@ namespace Online_Payment
             }
         }
 
-        private void PnlP_School_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Gvschoolsearch_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -209,6 +204,24 @@ namespace Online_Payment
             address.Clear();
             schemail.Clear();
             phonenum.Clear();
+        }
+
+        private void Stuid_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bool checkes = checkifexist();
+                if (checkes)
+                {
+                    school_add();
+                }
+                else
+                {
+                    MessageBox.Show("unavailable Student Id", "Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                }
+
+            }
+           
         }
     }
 }
