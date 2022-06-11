@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Runtime.InteropServices;
 //alt + shift +uparrow/downarrow then click to write multi line at once
 
 namespace Online_Payment
@@ -195,27 +196,36 @@ namespace Online_Payment
 
         private void Srcid_Click(object sender, EventArgs e)
         {
+
+            search_stu();
+            //Display_Student();
+        }
+        public void search_stu()
+        {
             string student_id = id.Text.ToString();
-            query = "select * from Student where Student_Id = "+ student_id;
+            query = "select * from Student where Student_Id = " + student_id;
+            //string search = "select First_Name,Last_Name,Image from Student where First_Name or Last_Name like '%'+'"+id.Text+"'+'%' and School_Id = "+loginform.getsid();
+            SqlConnection conn = new SqlConnection(Conn);
+            conn.Open();
             try
             {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
                 SqlDataAdapter stu = new SqlDataAdapter(query, Conn);
-                SqlCommandBuilder cnd = new SqlCommandBuilder(stu);
-                var ds = new DataSet();
-                stu.Fill(ds);
-                StuListGv.DataSource = ds.Tables[0];
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                StuListGv.DataSource = dt;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-         
-            //Display_Student();
+            conn.Close();
         }
 
         private void Logout_Click(object sender, EventArgs e)
         {
-           
             loginform loginform = new loginform();
             loginform.Show();
             this.Hide();
@@ -384,7 +394,9 @@ namespace Online_Payment
                 if (StuListGv.Columns[e.ColumnIndex].Name == "delete")
 
                 {
-                    if (MessageBox.Show("Are you sure want to delete this Student?\nThis Will Delete All Student you Added Before", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Are you sure want to delete this Student?\n" +
+                        "This Will Delete All Student you Added Before", "Message",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 
                     {
                         global.STUDENT_ID = StuListGv.Rows[e.RowIndex].Cells["Student_Id"].FormattedValue.ToString();
@@ -406,6 +418,24 @@ namespace Online_Payment
         private void TabPage3_Click(object sender, EventArgs e)
         {
             listpayer();
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wMSg, int wParm, int lParam);
+
+        private void Header_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Id_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                search_stu();
+            }
         }
     }
 }

@@ -208,7 +208,6 @@ namespace Online_Payment
 
         private void Pay_Now_Load(object sender, EventArgs e)
         {
-            CalculateFee();
             fees.Text = getfee().ToString();
             if (checkDate())
             {
@@ -223,6 +222,7 @@ namespace Online_Payment
                     pena.ForeColor = Color.Green;
                 }
             }
+
             else
             {
                 pay.Enabled = false;
@@ -230,7 +230,8 @@ namespace Online_Payment
                 pena.Text = "None";
                 pena.ForeColor = Color.Green;
             }
-
+            CalculateFee();
+          
             ttlpenality.Text = penalityfee.ToString();
             unpmonth.Text = monthfee.ToString();
             totalFee.Text = fee.ToString();

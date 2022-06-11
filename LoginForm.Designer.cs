@@ -40,19 +40,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fast = new System.Windows.Forms.Label();
             this.forgpass = new System.Windows.Forms.Button();
-            this.dataSet11 = new Online_Payment.DataSet1();
             this.logas = new System.Windows.Forms.ComboBox();
             this.showpassword = new System.Windows.Forms.CheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.log = new System.Windows.Forms.Button();
             this.loginas = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.remember = new System.Windows.Forms.CheckBox();
+            this.dataSet11 = new Online_Payment.DataSet1();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.winclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // reg
@@ -129,7 +130,7 @@
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(708, 126);
+            this.header.Size = new System.Drawing.Size(878, 126);
             this.header.TabIndex = 6;
             this.header.Paint += new System.Windows.Forms.PaintEventHandler(this.Header_Paint);
             // 
@@ -137,7 +138,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(236, 31);
+            this.label2.Location = new System.Drawing.Point(267, 33);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(324, 54);
@@ -149,7 +150,7 @@
             this.winclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.winclose.Image = ((System.Drawing.Image)(resources.GetObject("winclose.Image")));
             this.winclose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.winclose.Location = new System.Drawing.Point(676, 0);
+            this.winclose.Location = new System.Drawing.Point(846, 0);
             this.winclose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.winclose.Name = "winclose";
             this.winclose.Size = new System.Drawing.Size(31, 23);
@@ -165,7 +166,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(73, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 119);
+            this.pictureBox1.Size = new System.Drawing.Size(155, 119);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -192,11 +193,6 @@
             this.forgpass.UseVisualStyleBackColor = true;
             this.forgpass.Visible = false;
             this.forgpass.Click += new System.EventHandler(this.Forgpass_Click);
-            // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // logas
             // 
@@ -270,11 +266,29 @@
             this.pictureBox3.TabIndex = 17;
             this.pictureBox3.TabStop = false;
             // 
+            // remember
+            // 
+            this.remember.AutoSize = true;
+            this.remember.Checked = true;
+            this.remember.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.remember.Location = new System.Drawing.Point(566, 150);
+            this.remember.Name = "remember";
+            this.remember.Size = new System.Drawing.Size(122, 21);
+            this.remember.TabIndex = 19;
+            this.remember.Text = "Remember Me";
+            this.remember.UseVisualStyleBackColor = true;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // loginform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 473);
+            this.ClientSize = new System.Drawing.Size(878, 473);
+            this.Controls.Add(this.remember);
             this.Controls.Add(this.loginas);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -301,9 +315,9 @@
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.winclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,6 +343,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox winclose;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox remember;
     }
 }
 

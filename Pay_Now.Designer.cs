@@ -75,12 +75,12 @@
             this.currclass.AutoSize = true;
             this.currclass.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currclass.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.currclass.Location = new System.Drawing.Point(184, 397);
+            this.currclass.Location = new System.Drawing.Point(184, 398);
             this.currclass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.currclass.Name = "currclass";
-            this.currclass.Size = new System.Drawing.Size(74, 23);
+            this.currclass.Size = new System.Drawing.Size(63, 23);
             this.currclass.TabIndex = 88;
-            this.currclass.Text = "grade 5";
+            this.currclass.Text = "grade ";
             // 
             // fees
             // 
@@ -90,16 +90,16 @@
             this.fees.Location = new System.Drawing.Point(640, 214);
             this.fees.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fees.Name = "fees";
-            this.fees.Size = new System.Drawing.Size(89, 23);
+            this.fees.Size = new System.Drawing.Size(45, 23);
             this.fees.TabIndex = 89;
-            this.fees.Text = "fee: 1847";
+            this.fees.Text = "fee: ";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(482, 214);
+            this.label10.Location = new System.Drawing.Point(501, 214);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(115, 23);
@@ -111,7 +111,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(41, 221);
+            this.label2.Location = new System.Drawing.Point(41, 214);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 23);
             this.label2.TabIndex = 91;
@@ -122,7 +122,7 @@
             this.grade.AutoSize = true;
             this.grade.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grade.ForeColor = System.Drawing.Color.White;
-            this.grade.Location = new System.Drawing.Point(84, 397);
+            this.grade.Location = new System.Drawing.Point(84, 398);
             this.grade.Name = "grade";
             this.grade.Size = new System.Drawing.Size(61, 23);
             this.grade.TabIndex = 92;
@@ -146,9 +146,9 @@
             this.pena.ForeColor = System.Drawing.Color.White;
             this.pena.Location = new System.Drawing.Point(641, 327);
             this.pena.Name = "pena";
-            this.pena.Size = new System.Drawing.Size(132, 23);
+            this.pena.Size = new System.Drawing.Size(21, 23);
             this.pena.TabIndex = 94;
-            this.pena.Text = "Student Name";
+            this.pena.Text = "0";
             // 
             // label4
             // 
@@ -177,7 +177,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(46, 269);
+            this.label1.Location = new System.Drawing.Point(45, 260);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 23);
             this.label1.TabIndex = 97;
@@ -210,18 +210,18 @@
             this.stulname.AutoSize = true;
             this.stulname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stulname.ForeColor = System.Drawing.Color.White;
-            this.stulname.Location = new System.Drawing.Point(184, 265);
+            this.stulname.Location = new System.Drawing.Point(184, 260);
             this.stulname.Name = "stulname";
-            this.stulname.Size = new System.Drawing.Size(132, 23);
+            this.stulname.Size = new System.Drawing.Size(143, 23);
             this.stulname.TabIndex = 100;
-            this.stulname.Text = "Student Name";
+            this.stulname.Text = "Student LName";
             // 
             // stufname
             // 
             this.stufname.AutoSize = true;
             this.stufname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stufname.ForeColor = System.Drawing.Color.White;
-            this.stufname.Location = new System.Drawing.Point(184, 220);
+            this.stufname.Location = new System.Drawing.Point(184, 214);
             this.stufname.Name = "stufname";
             this.stufname.Size = new System.Drawing.Size(132, 23);
             this.stufname.TabIndex = 101;
@@ -245,16 +245,16 @@
             this.ttlpenality.ForeColor = System.Drawing.Color.White;
             this.ttlpenality.Location = new System.Drawing.Point(641, 371);
             this.ttlpenality.Name = "ttlpenality";
-            this.ttlpenality.Size = new System.Drawing.Size(132, 23);
+            this.ttlpenality.Size = new System.Drawing.Size(21, 23);
             this.ttlpenality.TabIndex = 103;
-            this.ttlpenality.Text = "Student Name";
+            this.ttlpenality.Text = "0";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(45, 317);
+            this.label9.Location = new System.Drawing.Point(45, 306);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 23);
             this.label9.TabIndex = 104;
@@ -265,11 +265,11 @@
             this.stuid.AutoSize = true;
             this.stuid.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stuid.ForeColor = System.Drawing.Color.White;
-            this.stuid.Location = new System.Drawing.Point(184, 310);
+            this.stuid.Location = new System.Drawing.Point(184, 306);
             this.stuid.Name = "stuid";
-            this.stuid.Size = new System.Drawing.Size(132, 23);
+            this.stuid.Size = new System.Drawing.Size(100, 23);
             this.stuid.TabIndex = 105;
-            this.stuid.Text = "Student Name";
+            this.stuid.Text = "Student ID";
             // 
             // label11
             // 
@@ -287,11 +287,11 @@
             this.totalFee.AutoSize = true;
             this.totalFee.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalFee.ForeColor = System.Drawing.Color.White;
-            this.totalFee.Location = new System.Drawing.Point(635, 474);
+            this.totalFee.Location = new System.Drawing.Point(641, 474);
             this.totalFee.Name = "totalFee";
-            this.totalFee.Size = new System.Drawing.Size(132, 23);
+            this.totalFee.Size = new System.Drawing.Size(21, 23);
             this.totalFee.TabIndex = 107;
-            this.totalFee.Text = "Student Name";
+            this.totalFee.Text = "0";
             // 
             // unpmonth
             // 
@@ -300,9 +300,9 @@
             this.unpmonth.ForeColor = System.Drawing.Color.White;
             this.unpmonth.Location = new System.Drawing.Point(641, 423);
             this.unpmonth.Name = "unpmonth";
-            this.unpmonth.Size = new System.Drawing.Size(132, 23);
+            this.unpmonth.Size = new System.Drawing.Size(21, 23);
             this.unpmonth.TabIndex = 109;
-            this.unpmonth.Text = "Student Name";
+            this.unpmonth.Text = "0";
             // 
             // label14
             // 
@@ -320,22 +320,22 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(78, 356);
+            this.label8.Location = new System.Drawing.Point(23, 352);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 23);
+            this.label8.Size = new System.Drawing.Size(122, 23);
             this.label8.TabIndex = 110;
-            this.label8.Text = "School";
+            this.label8.Text = "School Name";
             // 
             // schname
             // 
             this.schname.AutoSize = true;
             this.schname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.schname.ForeColor = System.Drawing.Color.White;
-            this.schname.Location = new System.Drawing.Point(184, 356);
+            this.schname.Location = new System.Drawing.Point(184, 352);
             this.schname.Name = "schname";
-            this.schname.Size = new System.Drawing.Size(100, 23);
+            this.schname.Size = new System.Drawing.Size(90, 23);
             this.schname.TabIndex = 111;
-            this.schname.Text = "Student ID";
+            this.schname.Text = "School ID";
             // 
             // Pay_Now
             // 

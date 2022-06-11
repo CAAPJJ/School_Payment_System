@@ -66,7 +66,12 @@ namespace Online_Payment
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            usersname.Focus();
+            if(Properties.Settings.Default.username != string.Empty)
+            {
+                usersname.Text = Properties.Settings.Default.username;
+                logas.Text = Properties.Settings.Default.logingas;
+            }
+            password.Focus();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -179,7 +184,23 @@ namespace Online_Payment
         }
         private void log_Click(object sender, EventArgs e)
         {
+            rememberme();
             login();
+        }
+        public void rememberme()
+        {
+            if (remember.Checked == true)
+            {
+                Properties.Settings.Default.username = usersname.Text;
+                Properties.Settings.Default.logingas = logas.Text;
+                Properties.Settings.Default.Save();
+               
+            }
+            else
+            {
+                Properties.Settings.Default.username = "";
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -281,6 +302,7 @@ namespace Online_Payment
         {
             if (e.KeyCode == Keys.Enter)
             {
+                rememberme();
                 login();
 
             }else if(e.KeyCode == Keys.Down)
