@@ -20,6 +20,7 @@ namespace Online_Payment
         string query;
 
         loginform loginform = new loginform();
+        Global global = new Global();
         
         public School_Adminstration(loginform logfor)
         {
@@ -80,7 +81,6 @@ namespace Online_Payment
                 MessageBox.Show(ex.Message);
             }
         }
-        int key = 0;
         private void StuListGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Stufname.Text = StuListGv.SelectedRows[0].Cells[1].Value.ToString();
@@ -92,14 +92,6 @@ namespace Online_Payment
             currclass.Text = StuListGv.SelectedRows[0].Cells[7].Value.ToString();
             address.Text = StuListGv.SelectedRows[0].Cells[8].Value.ToString();
             stuponenum.Text = StuListGv.SelectedRows[0].Cells[9].Value.ToString();
-            if (Stufname.Text == "")
-            {
-                key = 0;
-            }
-            else
-            {
-                key = Convert.ToInt32(StuListGv.SelectedRows[0].Cells[0].Value.ToString());
-            }
         }
 
         bool checkes;
@@ -372,6 +364,48 @@ namespace Online_Payment
         private void TabPage4_Click(object sender, EventArgs e)
         {
 
+        }
+        public void deletestudent()
+        {
+            string deleterecord = "delete from Student where School_Id =" + loginform.getsid() + " and Student_Id = " + global.STUDENT_ID;
+            SqlConnection conn = new SqlConnection(Conn);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(deleterecord, conn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Delete Successfully");
+            conn.Close();
+            Display_Student();
+        }
+
+        private void StuListGv_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (StuListGv.Columns[e.ColumnIndex].Name == "delete")
+
+                {
+                    if (MessageBox.Show("Are you sure want to delete this Student?\nThis Will Delete All Student you Added Before", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+                    {
+                        global.STUDENT_ID = StuListGv.Rows[e.RowIndex].Cells["Student_Id"].FormattedValue.ToString();
+                        deletestudent();
+                    }
+
+                }
+
+            }
+            catch
+            {
+
+            }
+        }
+        public void listpayer()
+        {
+
+        }
+        private void TabPage3_Click(object sender, EventArgs e)
+        {
+            listpayer();
         }
     }
 }

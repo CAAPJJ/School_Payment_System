@@ -45,16 +45,6 @@ namespace Online_Payment
         {
             search_school();
         }
-
-        //public void RefreshData()
-        //{
-        //    //SqlConnection conn = new SqlConnection(Conn);
-        //    //SqlCommand cmd = new SqlCommand("select *from Student", conn);
-        //    //SqlDataAdapter sda = new SqlDataAdapter(cmd);
-        //    //DataTable dt = new DataTable();
-        //    //sda.Fill(dt);
-        //    //stugrv.DataSource = dt;
-        //}
         public void school_add()
         {
             string addtocloud = "execute add_cloud  @pid,@sid,@stuid";
@@ -78,39 +68,59 @@ namespace Online_Payment
             }
             conn.Close();
             School_List();
+            search_school();
         }
         public void addemtptyrow(int i)
         {
             for (i = 0; i < 10; i++)
             {
-                DataTable dt = schlistgrview.DataSource as DataTable;
-                DataRow dr = dt.NewRow();
-                dt.Rows.Add(dr);
-                schlistgrview.DataSource = dt;
+                try
+                {
+                    DataTable dt = schlistgrview.DataSource as DataTable;
+                    DataRow dr = dt.NewRow();
+                    dt.Rows.Add(dr);
+                    schlistgrview.DataSource = dt;
+                }
+                catch
+                {
+
+                }
             }
         }
         public bool checkifexist()
         {
+            bool checkeds = false;
             string query = "select count(*) from Student where Student_Id = "+ stuid.Text.ToString() + " and School_Id = "+ global.SCHOOL_ID;
-           // MessageBox.Show(global.STUDENT_ID);
-            SqlConnection conn = new SqlConnection(Conn);
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(query, conn);
-            string row = cmd.ExecuteScalar().ToString();
-            conn.Close();
-            if (row == "1")
+
+            try
             {
-                return true;
+                SqlConnection conn = new SqlConnection(Conn);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                string row = cmd.ExecuteScalar().ToString();
+                conn.Close();
+                if (row == "1")
+                {
+                    checkeds= true;
+                }
+                else
+                { checkeds= false; }
+                
             }
-            else
-            { return false; }
-            
+            catch
+            {
+
+            }
+            return checkeds;
+
         }
         public static int countschid;
         public void School_List()
         {
             int pid = loginform.getpid();
-            string query = "select School_Name,School_Id from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id =" + pid + ")";
+           string query = "	select School_Name,Count(Student_Id) as Number_Of_Child from Parent_Cloud p left join School s ON s.School_Id " +
+                             "= p.School_Id and Parent_Id = "+pid+" where School_Name is not null group by School_Name ";
+           // string query = "select School_Name,School_Id from School s where s.School_Id in (select School_Id from Parent_cloud where Parent_Id =" + pid + ")";
             string query1 = "select count(School_Id) as Number from Parent_cloud where Parent_Id = " + pid;
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
@@ -153,19 +163,13 @@ namespace Online_Payment
         {
             if (e.KeyCode == Keys.Enter)
             {
-                search_school();
+               search_school();
             }
         }
 
-        private void Stuid_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                school_add();
-            }
-        }
+     
 
-        private void Gvschoolsearch_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void Gvschoolsearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -206,7 +210,7 @@ namespace Online_Payment
             phonenum.Clear();
         }
 
-        private void Stuid_KeyDown_1(object sender, KeyEventArgs e)
+        private void Stuid_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -221,7 +225,6 @@ namespace Online_Payment
                 }
 
             }
-           
         }
     }
 }

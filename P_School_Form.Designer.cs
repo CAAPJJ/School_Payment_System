@@ -230,7 +230,7 @@
             this.gvschoolsearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvschoolsearch.Size = new System.Drawing.Size(379, 372);
             this.gvschoolsearch.TabIndex = 65;
-            this.gvschoolsearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gvschoolsearch_CellClick_1);
+            this.gvschoolsearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gvschoolsearch_CellClick);
             // 
             // schemail
             // 
@@ -250,7 +250,7 @@
             this.stuid.Name = "stuid";
             this.stuid.Size = new System.Drawing.Size(277, 22);
             this.stuid.TabIndex = 77;
-            this.stuid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Stuid_KeyDown_1);
+            this.stuid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Stuid_KeyDown);
             // 
             // address
             // 
