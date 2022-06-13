@@ -178,6 +178,34 @@ namespace Online_Payment
                 MessageBox.Show("You already Pay For This Student","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
+
+        private void Pay_Now_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Back)
+            //{
+            //    pnlliststudent.Controls.Clear();
+            //    Pay_Now paynow = new Pay_Now(loginform);
+            //    paynow.TopLevel = false;
+            //    pnlliststudent.Controls.Clear();
+            //    pnlliststudent.Controls.Add(paynow);
+            //    paynow.Show();
+
+            //}
+            //else if (e.KeyCode == Keys.Down)
+            //{
+            //    usersname.Focus();
+            //}
+            //else if (e.KeyCode == Keys.Up)
+            //{
+            //    password.Focus();
+            //}
+        }
+
+        private void Label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Pay_Now_Load(object sender, EventArgs e)
         {
             fees.Text = getfee().ToString();
@@ -212,6 +240,8 @@ namespace Online_Payment
             stuid.Text = global.STUDENT_ID;
             schname.Text = global.SCHOOL_NAME;
             currclass.Text = classs;
+
+           
         }
     }
 }

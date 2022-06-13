@@ -71,6 +71,7 @@
             this.Secretcode.Name = "Secretcode";
             this.Secretcode.Size = new System.Drawing.Size(156, 22);
             this.Secretcode.TabIndex = 2;
+            this.Secretcode.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // emailadd
             // 
@@ -186,6 +187,7 @@
             this.Name = "password_recovery_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forger Password";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Password_recovery_form_FormClosing);
             this.Load += new System.EventHandler(this.Password_recovery_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

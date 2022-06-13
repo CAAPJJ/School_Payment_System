@@ -23,6 +23,11 @@ namespace Online_Payment
             //this.global = glob;
         }
 
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void Pay_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(Conn);
@@ -31,7 +36,7 @@ namespace Online_Payment
             {
                 conn.Open();
                 conn.Close();
-            }catch
+            }catch (Exception ex)
             {
 
             }
@@ -68,6 +73,7 @@ namespace Online_Payment
             if(countschid < 11)
             {
                 int j = 11 - countschid;
+                addemtptyrow(j);
             }
         }
         
@@ -83,6 +89,12 @@ namespace Online_Payment
         }
       
         public string scid, scname;
+
+        private void PnlPaymnet_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void Schlistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Global global = new Global();
@@ -131,6 +143,17 @@ namespace Online_Payment
             {
 
             }
+        }
+
+        public void addemtptyrow(int i)
+        {
+            //for (i = 0; i <10; i++)
+            //{
+            //    DataTable dt = schlistgrview.DataSource as DataTable;
+            //    DataRow dr = dt.NewRow();
+            //    dt.Rows.Add(dr);
+            //    schlistgrview.DataSource = dt;
+            //}
         }
     }
 }

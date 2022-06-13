@@ -373,6 +373,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pay_Now";
             this.Load += new System.EventHandler(this.Pay_Now_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Pay_Now_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

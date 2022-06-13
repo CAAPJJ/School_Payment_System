@@ -48,6 +48,7 @@
             this.pnlPaymnet.Name = "pnlPaymnet";
             this.pnlPaymnet.Size = new System.Drawing.Size(888, 800);
             this.pnlPaymnet.TabIndex = 77;
+            this.pnlPaymnet.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlPaymnet_Paint);
             // 
             // schlistgrview
             // 
