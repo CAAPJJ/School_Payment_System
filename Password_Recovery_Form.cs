@@ -18,27 +18,16 @@ namespace Online_Payment
         public String Conn = ("Data Source = DESKTOP-D6336JC; Initial Catalog = Online_Payment; Integrated Security = true");
         public static int count = 0;
         bool exist;
-        //string choose;
+
         public password_recovery_form()
         {
             InitializeComponent();
-        }
-       
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
         public int Generate_Secret_Code()
         {
             Random rnd = new Random();
             return code = rnd.Next(111111, 999999);
         } 
-        private void Password_recovery_form_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
         private void Chngpass_Click(object sender, EventArgs e)
         {
             
@@ -182,39 +171,6 @@ namespace Online_Payment
             {
                 MessageBox.Show("This email is not registered "+exist);
             }
-            /*
-            try
-            {
-                SqlConnection conn = new SqlConnection(Conn);
-                conn.Open();
-                string querys = "select count(*) from Student where Email=@email";
-                //SqlCommand cmd = new SqlCommand("insert into Student values(@School_id,@Fname,@Lname,@gender,@age,@usrname,@pass,@email,@current_class,@Address,@phonenumber)", conn);
-
-                SqlCommand cmd = new SqlCommand(querys, conn);
-                cmd.Parameters.AddWithValue("@email", emailadd.Text.ToString());
-                int a = (Int32)cmd.ExecuteScalar();
-                conn.Close();
-                if (a >= 1)
-                {
-                    i = Generate_Secret_Code();
-                    string picks = Convert.ToString(i);
-                    MessageBox.Show(picks);
-                }
-                else
-                {
-                    MessageBox.Show("This email is not registered"+a);
-                }
-                
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            */
-
-            //Getcode_Click();
-
         }
 
         private void Logout_Click(object sender, EventArgs e)
@@ -223,7 +179,6 @@ namespace Online_Payment
             loginform.Show();
             this.Hide();
         }
-
         private void Password_Recovery_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
