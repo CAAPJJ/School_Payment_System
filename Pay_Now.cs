@@ -15,7 +15,7 @@ namespace Online_Payment
     {
         public bool ispenality = false;
         public const int Penality = 100;
-        public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
+        public String Conn = ("Data Source = DESKTOP-D6336JC; Initial Catalog = Online_Payment; Integrated Security = true");
         int nextpayment = 0;
         DateTime d1 = new DateTime(2019, 12, 20);
         Global global = new Global();

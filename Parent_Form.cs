@@ -15,7 +15,7 @@ namespace Online_Payment
 {
     public partial class Parent_Form : Form
     {
-        public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
+        public String Conn = ("Data Source = DESKTOP-D6336JC; Initial Catalog = Online_Payment; Integrated Security = true");
         private Button currbtn;
         loginform loginform = new loginform();
         Global global = new Global();
@@ -26,6 +26,7 @@ namespace Online_Payment
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             labels();
         }
         public void loadform(object Form)

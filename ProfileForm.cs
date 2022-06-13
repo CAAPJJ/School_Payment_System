@@ -13,7 +13,7 @@ namespace Online_Payment
 {
     public partial class ProfileForm : Form
     {
-        public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
+        public String Conn = ("Data Source = DESKTOP-D6336JC; Initial Catalog = Online_Payment; Integrated Security = true");
         loginform loginform = new loginform();
         public ProfileForm(loginform logfor)
         {

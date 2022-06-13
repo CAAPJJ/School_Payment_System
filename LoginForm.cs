@@ -15,7 +15,7 @@ namespace Online_Payment
     public partial class loginform : Form
     {
         public static int i = 0;
-        public String Conn = ("Data Source = LAPTOP-C473Q6SO; Initial Catalog = Online_Payment; Integrated Security = true");
+        public String Conn = ("Data Source = DESKTOP-D6336JC; Initial Catalog = Online_Payment; Integrated Security = true");
         string choose = "Student";
         Global global = new Global();
         public loginform()
