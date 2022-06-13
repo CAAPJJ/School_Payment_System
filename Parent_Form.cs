@@ -39,11 +39,6 @@ namespace Online_Payment
             this.mainpanel.Tag = pf;
             pf.Show();
         }
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Parent_Form_Load(object sender, EventArgs e)
         {
             pnlnav.Location = new Point(0, dashboardd.Location.Y);
@@ -54,7 +49,6 @@ namespace Online_Payment
 
         private void Dashboard_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show(loginform.getpid().ToString());
             Activate_Button(sender);
             labels();
             lbltop.Text = "Dash Board";
@@ -77,12 +71,10 @@ namespace Online_Payment
             ShowThisForm(new P_School_Form(loginform));
             labels();
             lbltop.Text = "School";
-
         }
         private void Pay_Click(object sender, EventArgs e)
         {
             Activate_Button(sender);
-            //ShowThisForm(new Payment());
             labels();
             lbltop.Text = "Payment";
             Payment payment = new Payment(loginform);
@@ -90,7 +82,6 @@ namespace Online_Payment
             mainpanel.Controls.Clear();
             mainpanel.Controls.Add(payment);
             payment.Show();
-
         }
         private void Setting_Click(object sender, EventArgs e)
         {
@@ -105,10 +96,6 @@ namespace Online_Payment
             loginform loginform = new loginform();
             loginform.Show();
             this.Hide();
-        }
-        private void Urname_Click(object sender, EventArgs e)
-        {
-
         }
         public void Disable_button()
         {
@@ -144,6 +131,7 @@ namespace Online_Payment
         {
             this.Close();
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -152,28 +140,12 @@ namespace Online_Payment
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
-        private void PictureBox1_Click_1(object sender, EventArgs e)
-        {
-       //          if(WindowState == FormWindowState.Normal)
-       //{
-       //    WindowState = FormWindowState.Maximized;
-
-       //}
-       //else
-       //{
-       //    WindowState = FormWindowState.Normal;
-       //}
-
-        }
-
         public void labels()
         {
             lbltop.ForeColor = Color.Orange;
@@ -183,17 +155,10 @@ namespace Online_Payment
         {
             Application.Exit();
         }
-
-        private void Edit_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Minimize_MouseHover(object sender, EventArgs e)
         {
             minimize.BackColor = Color.LightGray;
         }
-
         private void Winclose_MouseHover(object sender, EventArgs e)
         {
             winclose.BackColor = Color.LightGray;
@@ -203,7 +168,6 @@ namespace Online_Payment
         {
             minimize.BackColor = Color.FromArgb(24, 30, 54);
         }
-
         private void Winclose_MouseLeave(object sender, EventArgs e)
         {
             winclose.BackColor = Color.FromArgb(24, 30, 54);

@@ -39,9 +39,10 @@ namespace Online_Payment
                 cmd.Parameters.AddWithValue("@pid", loginform.getpid());
                 curbala.Text = cmd.ExecuteScalar().ToString();
                 conn.Close();
-            }catch (Exception ex)
+            }catch
             {
-               //MessageBox.Show(ex.ToString());
+               MessageBox.Show("error Occured","Message");
+                conn.Close();
             }
             
 

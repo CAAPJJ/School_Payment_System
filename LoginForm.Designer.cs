@@ -77,7 +77,6 @@
             this.Pass.Size = new System.Drawing.Size(120, 29);
             this.Pass.TabIndex = 3;
             this.Pass.Text = "Password";
-            this.Pass.Click += new System.EventHandler(this.Label1_Click_1);
             // 
             // usersname
             // 
@@ -89,7 +88,6 @@
             this.usersname.Name = "usersname";
             this.usersname.Size = new System.Drawing.Size(183, 22);
             this.usersname.TabIndex = 4;
-            this.usersname.TextChanged += new System.EventHandler(this.Usersname_TextChanged);
             this.usersname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Usersname_KeyDown);
             // 
             // password
@@ -116,7 +114,6 @@
             this.usrname.TabIndex = 2;
             this.usrname.Text = "User Name";
             this.usrname.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.usrname.Click += new System.EventHandler(this.Label1_Click);
             // 
             // header
             // 
@@ -130,9 +127,8 @@
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(878, 126);
+            this.header.Size = new System.Drawing.Size(725, 126);
             this.header.TabIndex = 6;
-            this.header.Paint += new System.Windows.Forms.PaintEventHandler(this.Header_Paint);
             // 
             // label2
             // 
@@ -150,7 +146,7 @@
             this.winclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.winclose.Image = ((System.Drawing.Image)(resources.GetObject("winclose.Image")));
             this.winclose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.winclose.Location = new System.Drawing.Point(846, 0);
+            this.winclose.Location = new System.Drawing.Point(693, 0);
             this.winclose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.winclose.Name = "winclose";
             this.winclose.Size = new System.Drawing.Size(31, 23);
@@ -166,7 +162,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(73, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 119);
+            this.pictureBox1.Size = new System.Drawing.Size(2, 119);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -176,7 +172,7 @@
             this.fast.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.fast.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.fast.ForeColor = System.Drawing.Color.Red;
-            this.fast.Location = new System.Drawing.Point(0, 456);
+            this.fast.Location = new System.Drawing.Point(0, 410);
             this.fast.Name = "fast";
             this.fast.Size = new System.Drawing.Size(112, 17);
             this.fast.TabIndex = 7;
@@ -287,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 473);
+            this.ClientSize = new System.Drawing.Size(725, 427);
             this.Controls.Add(this.remember);
             this.Controls.Add(this.loginas);
             this.Controls.Add(this.pictureBox3);
@@ -309,7 +305,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Loginform_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Loginform_KeyDown);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();

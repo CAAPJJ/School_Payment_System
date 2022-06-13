@@ -19,7 +19,6 @@ namespace Online_Payment
         {
             InitializeComponent();
             this.loginform = logfor;
-           // Fill_Profile();
         }
 
         public void Fill_Profile()
@@ -74,32 +73,9 @@ namespace Online_Payment
         private void ProfileForm_Load(object sender, EventArgs e)
         {
             Fill_Profile();
-
         }
-        public void School_add()
-        {
-            //string pass = loginform.User_Password.ToString();
-            //string username = loginform.Get_User_Name.ToString();
-            //string query = "execute Fee_Information @id";
-            //try
-            //{
-            //    SqlConnection conn = new SqlConnection(Conn);
-            //    SqlCommand cmd = new SqlCommand(query, conn);
-            //    cmd.Parameters.AddWithValue("@id", 1);
-            //    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            //    DataTable dt = new DataTable();
-            //    sda.Fill(dt);
-            //    classfee.DataSource = dt;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-        }
-
         private void Save_Click(object sender, EventArgs e)
         {
-            //string query = "update Parent set First_Name = "'"+fname.Text+"'",Last_Name = "+lname.Text+",Age = "+ages.Text+ " where Parent_Id ="+loginform.getpid();
            string update =  "update Parent set First_Name = '" + fname.Text + "" +
                 "',Last_Name = '" + lname.Text + "',Age = '" + ages.Text + "'," +
                 "email = '"+email.Text+"',Phone_number = '"+phonenum.Text+"',User_Name" +
@@ -109,18 +85,32 @@ namespace Online_Payment
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(update, conn);// "update Student set FIRST_NAME = '" + fname.Text + "',LAST_NAME = '" + lname.Text + "' where ID=" + id.Text + "";
+                SqlCommand cmd = new SqlCommand(update, conn);
                 if (MessageBox.Show("Are you sure want to Update?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Update Successfully", "Message");
+                    disableText();
                 }
                 Fill_Profile();
             }catch(SqlException ex)
             {
                 MessageBox.Show(ex.Message,"Message");
+                conn.Close();
             }
             conn.Close();
+        }
+        public void disableText()
+        {
+            fname.Enabled = false;
+            lname.Enabled = false;
+            ages.Enabled = false;
+            male.Enabled = false;
+            female.Enabled = false;
+            usrname.Enabled = false;
+            email.Enabled = false;
+            phonenum.Enabled = false;
+            save.Enabled = false;
         }
     }
 }

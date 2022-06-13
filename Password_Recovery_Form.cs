@@ -33,10 +33,7 @@ namespace Online_Payment
         {
             Random rnd = new Random();
             return code = rnd.Next(111111, 999999);
-        }
-
-       
-
+        } 
         private void Password_recovery_form_FormClosing(object sender, FormClosingEventArgs e)
         {
 
@@ -49,20 +46,18 @@ namespace Online_Payment
             {
                 loginform loginform = new loginform();
                 string choose = loginform.choice();
+                SqlConnection conn = new SqlConnection(Conn);
+                conn.Open();
                 try
                 {
-                    SqlConnection conn = new SqlConnection(Conn);
-                    conn.Open();
                     string querys = "update "+choose+" set Password=@newpass where email=@email";
-                    //SqlCommand cmd = new SqlCommand("insert into Student values(@School_id,@Fname,@Lname,@gender,@age,@usrname,@pass,@email,@current_class,@Address,@phonenumber)", conn);
-
                     SqlCommand cmd = new SqlCommand(querys, conn);
                     cmd.Parameters.AddWithValue("@newpass", newpass.Text.ToString());
                     cmd.Parameters.AddWithValue("@email", emailadd.Text.ToString());
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    MessageBox.Show("Password Succssfully Changed");
 
+                    MessageBox.Show("Password Succssfully Changed");
                    // loginform loginform = new loginform();
                     loginform.Show();
                     this.Hide();
@@ -72,6 +67,7 @@ namespace Online_Payment
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    conn.Close();
                 }
             }
             else
@@ -90,11 +86,10 @@ namespace Online_Payment
         }
         public bool ifexist()
         {
-            
+            SqlConnection conn = new SqlConnection(Conn);
+            conn.Open();
             try
             {
-                SqlConnection conn = new SqlConnection(Conn);
-                conn.Open();
                 string querys = "select count(*) from Student where Email=@email";
                 //SqlCommand cmd = new SqlCommand("insert into Student values(@School_id,@Fname,@Lname,@gender,@age,@usrname,@pass,@email,@current_class,@Address,@phonenumber)", conn);
 
@@ -116,6 +111,7 @@ namespace Online_Payment
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
             return exist;
         }
@@ -163,34 +159,8 @@ namespace Online_Payment
                     DialogResult result = MessageBox.Show("This email is not registered ", "Information", buttons,
                     MessageBoxIcon.Error, MessageBoxDefaultButton.Button2,
                     MessageBoxOptions.RightAlign, true);
-
-                   // DialogResult result  = MessageBox.Show("This email is not registered ", "Information", MessageBoxIcon.Error);
-
                 }
             }
-            /*
-           
-            try
-            {
-                MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-
-                mail.From = new MailAddress("leulkahssaye100@gmail.com");
-                mail.To.Add(emailadd.Text.ToString());
-                mail.Subject = "Secret Code";
-                mail.Body = "Your Secrect Code is "+i;
-
-                SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("leulkahssaye100@gmail", "!LkGwTb1045#");
-                SmtpServer.EnableSsl = true;
-
-                SmtpServer.Send(mail);
-                MessageBox.Show("mail Send");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }*/
             getcode.Visible = false;
             resend.Visible = true;
         }
@@ -202,7 +172,6 @@ namespace Online_Payment
 
         private void Resend_Click(object sender, EventArgs e)
         {
-          //  bool iftrue = ifexist();
             if (ifexist())
             {
                 i = Generate_Secret_Code();

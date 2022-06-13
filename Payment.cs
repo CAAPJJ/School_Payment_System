@@ -63,6 +63,8 @@ namespace Online_Payment
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 schlistgrview.DataSource = dt;
+                schlistgrview.Columns[2].Visible = false;
+                
             }
             catch (SqlException ex)
             {
@@ -134,7 +136,7 @@ namespace Online_Payment
                         
                     {
                          global.SCHOOL_ID = schlistgrview.Rows[e.RowIndex].Cells["School_Id"].FormattedValue.ToString();
-                            deleteSchool();
+                         deleteSchool();
                     }
                 }
             }catch

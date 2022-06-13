@@ -94,14 +94,12 @@
             resources.ApplyResources(this.edit, "edit");
             this.edit.Name = "edit";
             this.edit.TabStop = false;
-            this.edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // urname
             // 
             resources.ApplyResources(this.urname, "urname");
             this.urname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.urname.Name = "urname";
-            this.urname.Click += new System.EventHandler(this.Urname_Click);
             // 
             // userpic
             // 
@@ -204,7 +202,6 @@
             resources.ApplyResources(this.winmax, "winmax");
             this.winmax.Name = "winmax";
             this.winmax.TabStop = false;
-            this.winmax.Click += new System.EventHandler(this.PictureBox1_Click_1);
             // 
             // minimize
             // 

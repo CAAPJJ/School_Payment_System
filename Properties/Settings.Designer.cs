@@ -46,5 +46,17 @@ namespace Online_Payment.Properties {
                 this["logingas"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Pass {
+            get {
+                return ((string)(this["Pass"]));
+            }
+            set {
+                this["Pass"] = value;
+            }
+        }
     }
 }

@@ -64,7 +64,7 @@ namespace Online_Payment
             
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
             if(Properties.Settings.Default.username != string.Empty)
             {
@@ -74,20 +74,6 @@ namespace Online_Payment
             password.Focus();
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Passwor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         public String Get_User_Name
         {
             get { return usersname.Text.ToString(); }
@@ -113,14 +99,6 @@ namespace Online_Payment
             }
             return choose;
         }
-        private void logus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //logus.SelectedItem = "Student";
-            //choose =logas.Text.ToString();
-            //choose = "Student";
-
-        }
-
         public void login()
         {
             try
@@ -193,41 +171,25 @@ namespace Online_Payment
             {
                 Properties.Settings.Default.username = usersname.Text;
                 Properties.Settings.Default.logingas = logas.Text;
+                Properties.Settings.Default.Pass = password.Text;
                 Properties.Settings.Default.Save();
                
             }
             else
             {
                 Properties.Settings.Default.username = "";
+                Properties.Settings.Default.Pass = "";
                 Properties.Settings.Default.Save();
             }
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Header_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Reg_Click(object sender, EventArgs e)
         {
-            //loginform log = new loginform();
             RegForm regForm = new RegForm();
             MainMenu mains = new MainMenu();
-            //mains.Show();
             regForm.Show();
             this.Hide();
         }
-
-        private void Loginform_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Forgpass_Click(object sender, EventArgs e)
         {
             password_recovery_form pasrec = new password_recovery_form();
@@ -245,10 +207,6 @@ namespace Online_Payment
             {
                 password.UseSystemPasswordChar = true;
             }
-        }
-        private void logus(object sender, EventArgs e)
-        {
-
         }
 
         private void Winclose_Click(object sender, EventArgs e)
@@ -304,20 +262,11 @@ namespace Online_Payment
             {
                 rememberme();
                 login();
-
-            }else if(e.KeyCode == Keys.Down)
-            {
-                usersname.Focus();
-            }
-            else if (e.KeyCode == Keys.Up)
-            {
-                password.Focus();
             }
         }
-
-        private void Usersname_TextChanged(object sender, EventArgs e)
+        private void Loginform_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

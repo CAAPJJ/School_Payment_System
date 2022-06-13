@@ -37,15 +37,5 @@ namespace Online_Payment
                 this.Close();
             }
         }
-
-        private void Loading_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

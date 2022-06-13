@@ -30,18 +30,16 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(choosen_school));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbChoosenSchool = new System.Windows.Forms.Label();
             this.pnlliststudent = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.stulistgrview = new System.Windows.Forms.DataGridView();
-            this.status = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.lblscool = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlliststudent.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stulistgrview)).BeginInit();
@@ -59,7 +57,6 @@
             this.lbChoosenSchool.Size = new System.Drawing.Size(147, 38);
             this.lbChoosenSchool.TabIndex = 74;
             this.lbChoosenSchool.Text = "Choosen";
-            this.lbChoosenSchool.Click += new System.EventHandler(this.LbChoosenSchool_Click);
             // 
             // pnlliststudent
             // 
@@ -72,7 +69,6 @@
             this.pnlliststudent.Name = "pnlliststudent";
             this.pnlliststudent.Size = new System.Drawing.Size(888, 800);
             this.pnlliststudent.TabIndex = 78;
-            this.pnlliststudent.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // panel1
             // 
@@ -107,16 +103,15 @@
             this.stulistgrview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.stulistgrview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stulistgrview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.status,
             this.Delete});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.stulistgrview.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.stulistgrview.DefaultCellStyle = dataGridViewCellStyle4;
             this.stulistgrview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stulistgrview.Location = new System.Drawing.Point(0, 0);
             this.stulistgrview.Name = "stulistgrview";
@@ -131,34 +126,6 @@
             this.stulistgrview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Stulistgrview_CellContentClick);
             this.stulistgrview.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Stulistgrview_CellDoubleClick);
             this.stulistgrview.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Stulistgrview_KeyDown);
-            // 
-            // status
-            // 
-            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.status.DefaultCellStyle = dataGridViewCellStyle3;
-            this.status.HeaderText = "Status";
-            this.status.Image = ((System.Drawing.Image)(resources.GetObject("status.Image")));
-            this.status.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 80;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Delete.Width = 70;
             // 
             // lblscool
             // 
@@ -180,6 +147,20 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Width = 426;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Delete.Width = 70;
             // 
             // choosen_school
             // 
@@ -208,7 +189,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView stulistgrview;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn status;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

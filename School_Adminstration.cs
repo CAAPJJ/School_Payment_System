@@ -204,7 +204,6 @@ namespace Online_Payment
         {
             string student_id = id.Text.ToString();
             query = "select * from Student where Student_Id = " + student_id;
-            //string search = "select First_Name,Last_Name,Image from Student where First_Name or Last_Name like '%'+'"+id.Text+"'+'%' and School_Id = "+loginform.getsid();
             SqlConnection conn = new SqlConnection(Conn);
             conn.Open();
             try

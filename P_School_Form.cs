@@ -25,8 +25,7 @@ namespace Online_Payment
         }
         private void Search_Click(object sender, EventArgs e)
         {
-            search.Text = "";
-            search.ForeColor = Color.Black;
+            search.ForeColor = Color.Red;
         }
 
         public void search_school()
@@ -114,6 +113,7 @@ namespace Online_Payment
             return checkeds;
 
         }
+
         public static int countschid;
         public void School_List()
         {
@@ -137,22 +137,14 @@ namespace Online_Payment
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
             if(countschid < 11)
             {
                 int j = 11 - countschid;
                 addemtptyrow(j);
             }
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void School_name_TextChanged(object sender, EventArgs e)
-        {
-
+            conn.Close();
         }
         private void P_School_Form_Load(object sender, EventArgs e)
         {
@@ -166,9 +158,6 @@ namespace Online_Payment
                search_school();
             }
         }
-
-     
-
         private void Gvschoolsearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -186,8 +175,7 @@ namespace Online_Payment
             catch
             {
 
-            }
-            
+            } 
         }
 
         private void Add_School_Click(object sender, EventArgs e)

@@ -10,7 +10,7 @@ namespace Online_Payment
     {
       private static string School_Name,fname,lname;
         private static string id,stuid,pacc;
-       
+ 
         public string SCHOOL_ID
         {
             set { id = value;}

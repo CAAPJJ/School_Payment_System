@@ -78,7 +78,6 @@
             this.loading.Size = new System.Drawing.Size(124, 29);
             this.loading.TabIndex = 3;
             this.loading.Text = "Loading....";
-            this.loading.Click += new System.EventHandler(this.Loading_Click);
             // 
             // pictureBox1
             // 
@@ -99,7 +98,6 @@
             this.label1.Size = new System.Drawing.Size(205, 36);
             this.label1.TabIndex = 5;
             this.label1.Text = "Pay With Jase";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -128,9 +126,9 @@
             this.label3.ForeColor = System.Drawing.Color.PowderBlue;
             this.label3.Location = new System.Drawing.Point(263, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(294, 36);
+            this.label3.Size = new System.Drawing.Size(299, 36);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Jase Online Payment";
+            this.label3.Text = "Wise Online Payment";
             // 
             // LoadingForm
             // 

@@ -60,10 +60,6 @@ namespace Online_Payment
             paynow.Show();
         }
 
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
        public static int counts;
         public void student_list()
         {
@@ -82,23 +78,16 @@ namespace Online_Payment
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 stulistgrview.DataSource = dt;
+                stulistgrview.Columns[3].Visible = false;
                 counts =Convert.ToInt32(cmd1.ExecuteScalar());
+                conn.Close();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
           
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-            changepanle();
-        }
-
-        private void LbChoosenSchool_Click(object sender, EventArgs e)
-        {
-            
         }
         public string stufname,stulname,stuid;
 
@@ -144,7 +133,6 @@ namespace Online_Payment
 
 
         }
-
         private void Stulistgrview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             stulistgrview.CurrentRow.Selected = true;
@@ -156,7 +144,6 @@ namespace Online_Payment
             global.STUDENT_LNAME = stulname;
             changepanle();
         }
-
         private void Stulistgrview_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Back)
@@ -168,11 +155,6 @@ namespace Online_Payment
                 pnlliststudent.Controls.Add(paynow);
                 paynow.Show();
             }
-        }
-
-        public void checkifpay()
-        {
-            string query = "SELECT CAST(CASE WHEN COUNT(*) > 0 THEN 1 ELSE 0 END AS BIT)FROM Pay WHERE Parent_Id = 100;";
         }
     }
 }
