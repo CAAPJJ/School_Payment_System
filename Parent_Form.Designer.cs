@@ -81,7 +81,7 @@
             // 
             // userpicpnl
             // 
-           // this.userpicpnl.Controls.Add(this.edit);
+            this.userpicpnl.Controls.Add(this.edit);
             this.userpicpnl.Controls.Add(this.urname);
             this.userpicpnl.Controls.Add(this.userpic);
             resources.ApplyResources(this.userpicpnl, "userpicpnl");
@@ -89,17 +89,17 @@
             // 
             // edit
             // 
-//            resources.ApplyResources(this.edit, "edit");
-            //this.edit.Name = "edit";
-            //this.edit.TabStop = false;
-            //this.edit.Click += new System.EventHandler(this.Edit_Click);
+            resources.ApplyResources(this.edit, "edit");
+            this.edit.Name = "edit";
+            this.edit.TabStop = false;
+            this.edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // urname
             // 
             resources.ApplyResources(this.urname, "urname");
             this.urname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.urname.Name = "urname";
-//            this.urname.Click += new System.EventHandler(this.Urname_Click);
+            this.urname.Click += new System.EventHandler(this.Urname_Click);
             // 
             // userpic
             // 
@@ -293,7 +293,7 @@
             resources.ApplyResources(this.urname, "urname");
             this.urname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.urname.Name = "urname";
-//            this.urname.Click += new System.EventHandler(this.Urname_Click);
+            this.urname.Click += new System.EventHandler(this.Urname_Click);
             // 
             // pnlnav
             // 
